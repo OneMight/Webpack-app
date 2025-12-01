@@ -11,7 +11,7 @@ export default(env:Env) =>{
     const isDev = env.mode === 'development';
     const config: webpack.Configuration = {
             mode: env.mode ?? 'development',
-            entry: './src/index.ts',
+            entry: './src/index.tsx',
             output: {
                 filename: '[name].js',
                 path: path.resolve(__dirname, 'build'),
@@ -23,6 +23,10 @@ export default(env:Env) =>{
             devtool: isDev && 'inline-source-map',
             module: {
                 rules: [
+                    {
+                        test:/\.css$/i,
+                        use:['style-loader','css-loader']
+                    },
                 {
                     test: /\.tsx?$/,
                     use: 'ts-loader',
