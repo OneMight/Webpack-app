@@ -7,7 +7,7 @@ const Card = ({title, price, images} : Product) =>{
             <p className="card-title">{title}</p>
             <div className="card-controll">
                 <p className="card-price">${price}</p>
-                <button>+</button>
+                <button className="card-button">+</button>
             </div>
             
         </div>

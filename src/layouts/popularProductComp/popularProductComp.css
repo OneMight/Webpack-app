@@ -32,6 +32,7 @@
 .main-page_card-container{
     width: 100%;
     display: grid;
+    justify-content: center;
     grid-template-rows: repeat(2, 280px);
     grid-template-columns: repeat(4,280px);
     gap: 50px;

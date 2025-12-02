@@ -5,7 +5,6 @@
     align-items: start;
     justify-content: center;
     gap: 10px;
-    padding: 10px;
 }
 .card-img{
     width: 280px;
@@ -28,4 +27,21 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+.card-button{
+    border: 1px solid black;
+    padding: 3px;
+    font-size: 14px;
+    border-radius: 60px;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+}
+
+@media (any-hover: hover) {
+    .card-button:hover{
+        cursor: pointer;
+        background-color: wheat;
+        transition: all 0.3s;
+    }
 }
