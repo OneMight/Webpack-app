@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom"
-import { ROUTES } from "../../shared/routes"
+import { ROUTES } from "../../utils/routes"
 import './header.css'
-export const Header = () =>{
+const Header = () =>{
     return(
         <header className="header">
             <div className="header-image">

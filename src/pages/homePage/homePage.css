@@ -1,0 +1,38 @@
+.home-page{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.home-page_entire-block{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px 0;
+    width: 100%;
+}
+.home-page_article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 60%;
+}
+.home-page_title{
+    font-family: var(--Oxygen);
+    font-weight: 600;
+    text-align: center;
+    font-size: 45px;
+    margin: 0;
+}
+.home-page_text{
+    font-family: var(--Oxygen);
+    text-align: center;
+    margin: 0;
+    width: 70%;
+}
+

@@ -1,0 +1,31 @@
+.card-div{
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+.card-img{
+    width: 280px;
+    height: 160px;
+
+}
+.card-title{
+    font-size: 22px;
+    font-family: var(--Oxygen);
+    margin: 0;
+}
+.card-price{
+    font-size: 14px;
+    font-family: var(--Oxygen);
+    margin: 0;
+}
+.card-controll{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
