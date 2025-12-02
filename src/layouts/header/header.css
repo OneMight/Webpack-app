@@ -1,5 +1,3 @@
-
-
 .header{
     width: 90%;
     display: flex;
@@ -30,6 +28,18 @@
     font-family: var(--Oxygen);
     text-decoration: none;
     color: #000;
+}
+
+.header-log-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.header_button{
+    color: #ffffff;
+    background-color: #000;
 }
 
 @media (any-hover: hover) {
