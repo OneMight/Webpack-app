@@ -2,11 +2,11 @@ import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import { ButtonInterface } from '../../types/intefaces';
 const ColorButton = styled(Button)(
-  ({ backgroundcolor, Color, borderradius, fontSize, padding, width }:ButtonInterface) => ({
+  ({ backgroundcolor,color,  borderRadius, fontSize, padding, width }:ButtonInterface) => ({
     backgroundColor: backgroundcolor || 'rgba(0, 0, 0, 1)',
-    color: Color || 'rgba(255, 255, 255, 1)',
-    fontFamily: 'var(--Exo)',
-    borderradius: borderradius || '12px',
+    color: color || 'rgba(255, 255, 255, 1)',
+    fontFamily: 'Exo, sans-serif',
+    borderRadius: borderRadius || '20px',
     fontSize: fontSize || '16px',
     padding: padding || '13px',
     display: 'flex',
@@ -18,14 +18,14 @@ const ColorButton = styled(Button)(
 );
 
 export default function CustomizedButtons(props:ButtonInterface ) {
-  const { children, Color, borderradius, fontSize, padding, func, width,backgroundcolor } =
+  const { children,color,borderRadius, fontSize, padding, func, width,backgroundcolor } =
     props;
   return (
     <ColorButton
       variant="contained"
       backgroundcolor={backgroundcolor}
-      Color={Color}
-      borderradius={borderradius}
+      borderRadius={borderRadius}
+      color={color}
       fontSize={fontSize}
       padding={padding}
       onClick={func}

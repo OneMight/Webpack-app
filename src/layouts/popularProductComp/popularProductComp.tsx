@@ -28,7 +28,7 @@ const PopularProductComp = () =>{
                     <h1 className='main-page_title'>Most Popular Products</h1>
                     <p className='main-page_text'>Most popular products</p>
                 </div>
-                    <Button padding='5px 5px' borderradius='20px' fontSize='16px' width='120px' children='View All'/>
+                    <Button padding='5px 5px' color='#fff' borderRadius='20px' fontSize='16px' width='120px' children='View All'/>
                 
             </div>
             <div className='main-page_card-container'>

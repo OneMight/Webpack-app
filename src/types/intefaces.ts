@@ -1,11 +1,11 @@
 export interface ButtonInterface{
     backgroundcolor?: string,
     borderColor?:string,
-    Color?:string
     padding:string,
-    borderradius: string,
+    borderRadius: string,
     fontSize: string,
     width: string,
+    color: any,
     children?: string,
     func?: ()=>void,
 }
