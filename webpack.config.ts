@@ -40,6 +40,7 @@ export default(env:Env) =>{
             devServer: isDev ? {
                 port: env.port ?? 3000,
                 open: true,
+                historyApiFallback: true,
             } : undefined,
 
             plugins: [
