@@ -32,8 +32,8 @@ export default function Registration(){
                        <Button  width='100%' padding='10px 0' borderRadius='30px' fontSize='20px' color='#fff'>Create Account</Button>
                     </form>
                 </div>
-                <div className='registration-img'>
-                    <img className='reg-image' src="./images/registration-img.jpg" alt="" />
+                <div className='img'>
+                    <img className='image' src="./images/registration-img.jpg" alt="" />
                 </div>
             </div>
         </main>

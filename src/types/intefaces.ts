@@ -31,5 +31,6 @@ export interface BaseInput extends IInput{
 }
 export interface formInput extends IInput{
     label: string,
+    width?:string
     
 }

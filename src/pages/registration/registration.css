@@ -21,9 +21,10 @@
     align-items: center;
     justify-content: start;
     gap: 30px;
+    margin: 20px 30px;
 }
 .registration-text{
-    width: 90%;
+    width: 100%;
 }
 
 .registration-title{
@@ -44,11 +45,13 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    width: 100%;
 }
 .registration-inputs{
     display: flex;
     flex-direction: row;
     gap: 30px;
+    width: 100%;
 }
 
 .registration-inputs > label{
@@ -58,6 +61,7 @@
     align-items: start;
     gap: 10px;
     font-family: var(--Oxygen);
+    width: 45%;
 }
 .registration-terms{
     display: flex;
@@ -68,10 +72,10 @@
     font-family: var(--Oxygen);
     cursor: pointer;
 }
-.registration-img{
+.img{
     width: 50%;
 }
-.reg-image{
+.image{
     width: 100%;
     height: 100%;
     border-radius: 0 20px 20px 0;
