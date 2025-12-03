@@ -1,7 +1,6 @@
 import React from 'react'
 import './footer.css'
 export default function Footer(){
-
     const handlePrevent = (e:React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
     }

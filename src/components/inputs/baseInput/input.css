@@ -1,0 +1,9 @@
+.input{
+    width: 300px;
+    background-color: #282828;
+    border: 1px solid #FFFFFF;
+    border-radius: 20px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-family: var(--Oxygen);
+}

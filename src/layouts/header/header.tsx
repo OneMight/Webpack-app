@@ -21,20 +21,20 @@ const Header = () =>{
                 <Link to={''}>Contact Us</Link>
                 <Link to={''}>Blog</Link>
             </nav>
-            {isLogged ? (
-                <div className="header_controll">
-                <button className="header_buttons">
-                    <img src="./images/account.svg" alt="account" />
-                    <img src="./images/bottom-arrow.svg" alt="bottom-arrow" />
-                </button>
-                <Link to={''}>
-                    <img src="./images/orders.svg" alt="orders" />
-                </Link>
-            </div>
-            ):(
-                <div className="header-log-buttons">
+            {!isLogged ? (
+               <div className="header-log-buttons">
                     <Button children="Registration" func={() =>handleNavigate(ROUTES.REGISTER)} width="120px" padding="5px 5px"borderRadius="20px" fontSize="16px" color={'#fff'}/>
                     <Button children="Login" func={()=>handleNavigate(ROUTES.LOGIN)} width="120px" padding="5px 5px"borderRadius="20px" fontSize="16px" color={'#fff'}/>
+                </div> 
+            ):(
+                <div className="header_controll">
+                    <button className="header_buttons">
+                        <img src="./images/account.svg" alt="account" />
+                        <img src="./images/bottom-arrow.svg" alt="bottom-arrow" />
+                    </button>
+                    <Link to={''}>
+                        <img src="./images/orders.svg" alt="orders" />
+                    </Link>
                 </div>
             )}
             

@@ -19,3 +19,17 @@ export interface ProductResponse{
     products: Product[]
     total: number
 }
+export interface IInput{
+    name:string,
+    placeholder: string,
+    type: string,
+   
+}
+export interface BaseInput extends IInput{
+    styles: Object,
+    requared?: boolean,
+}
+export interface formInput extends IInput{
+    label: string,
+    
+}
