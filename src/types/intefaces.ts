@@ -1,3 +1,4 @@
+
 export interface ButtonInterface{
     backgroundcolor?: string,
     borderColor?:string,
@@ -7,6 +8,7 @@ export interface ButtonInterface{
     width: string,
     color: any,
     children?: string,
+    disabled?:boolean
     func?: ()=>void,
 }
 export interface Product{
@@ -23,7 +25,8 @@ export interface IInput{
     name:string,
     placeholder: string,
     type: string,
-   
+    func?: (e:React.ChangeEvent<HTMLInputElement >)=>void,
+
 }
 export interface BaseInput extends IInput{
     styles: Object,
@@ -32,5 +35,16 @@ export interface BaseInput extends IInput{
 export interface formInput extends IInput{
     label: string,
     width?:string
-    
+}
+
+export interface IBaseUser{
+    name: string,
+    email: string,
+    password: string
+}
+export interface IRegisterApi{
+    newUser: IBaseUser
+}
+export interface IAlert{
+    children: string,
 }

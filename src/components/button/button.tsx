@@ -18,7 +18,7 @@ const ColorButton = styled(Button)(
 );
 
 export default function CustomizedButtons(props:ButtonInterface ) {
-  const { children,color,borderRadius, fontSize, padding, func, width,backgroundcolor } =
+  const { children,color,borderRadius, fontSize, padding,disabled, func, width,backgroundcolor } =
     props;
   return (
     <ColorButton
@@ -28,9 +28,10 @@ export default function CustomizedButtons(props:ButtonInterface ) {
       color={color}
       fontSize={fontSize}
       padding={padding}
-      onClick={func}
+      onClick={() =>func()}
       width={width}
-      onClickCapture={func}
+      disabled={disabled}
+      onClickCapture={() =>func()}
       
     >
      {children}
