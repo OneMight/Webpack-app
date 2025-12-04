@@ -1,6 +1,6 @@
 import './popularProductComp.css'
 import Button from '../../components/button/button'
-import { useGetProductsQuery } from '../../hooks/useGetProducts'
+import { useGetProductsQuery } from '../../hooks/productApi'
 import Card from '../../components/card/card'
 import { Product } from '../../types/intefaces'
 import { useEffect } from 'react'
