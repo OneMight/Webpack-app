@@ -1,15 +1,14 @@
-import {createRoot} from 'react-dom/client'
-import {App} from './app/App'
-import { Provider } from 'react-redux'
-import { store } from './app/store'
-const root = document.getElementById('root')
-if(!root){
-    throw new Error('root not found')
+import { createRoot } from "react-dom/client";
+import { App } from "./app/App";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
+const root = document.getElementById("root");
+if (!root) {
+  throw new Error("root not found");
 }
-const container = createRoot(root)
+const container = createRoot(root);
 container.render(
-    <Provider store ={store}>
-        <App/>
-    </Provider>
-    
-)
+  <Provider store={store}>
+    <App />
+  </Provider>,
+);
