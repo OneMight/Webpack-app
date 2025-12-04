@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 import { useAppDispatch,useAppSelector } from '../../app/hooks'
 import { setProducts } from '../../store/ProductSlice'
 const PopularProductComp = () =>{
-     const { data, error, isLoading } = useGetProductsQuery('bulbasaur')
+     const { data, error, isLoading } = useGetProductsQuery('')
      const dispatch = useAppDispatch()     
      useEffect(()=>{
         if(data?.products){

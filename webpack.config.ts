@@ -48,6 +48,7 @@ export default(env:Env) =>{
                 template: path.resolve(__dirname, 'public', 'index.html'),
             })
             ]
+            
     
     }
     return config;  

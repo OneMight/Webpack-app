@@ -2,14 +2,31 @@ import {Link} from "react-router-dom"
 import { ROUTES } from "../../utils/routes"
 import './header.css'
 import Button from '../../components/button/button'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { useVerifyUserQuery } from "../../hooks/userApi"
 const Header = () =>{
     const navigate = useNavigate()
+    const [isLogged, setIsLogged] = useState<boolean>(false)
+
     const handleNavigate = (route: string) =>{
         navigate(route)
     }
-    const [isLogged, setIsLogged] = useState<boolean>(false)
+    
+    const handleGetToken = (name:string) =>{
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+    const accessToken = handleGetToken('accessToken')
+    const {data,isSuccess} = useVerifyUserQuery(accessToken,{
+        skip: !accessToken
+    })
+    useEffect(()=>{
+        if(isSuccess){
+            setIsLogged(true)
+        }
+    },[isSuccess])
     return(
         <header className="header">
             <div className="header-image">
