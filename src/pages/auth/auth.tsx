@@ -66,7 +66,7 @@ export default function Auth() {
               padding="10px 0"
               borderRadius="30px"
               fontSize="20px"
-              textColor="#fff"
+              textcolor="#fff"
               func={() => handleGetToken()}
             >
               Login

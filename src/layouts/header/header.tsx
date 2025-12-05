@@ -34,7 +34,7 @@ const Header = () => {
       </div>
       <nav className="header_nav">
         <Link to={ROUTES.HOME}>Home</Link>
-        <Link to={""}>Categories</Link>
+        <Link to={ROUTES.CATEGORIES}>Categories</Link>
         <Link to={""}>Contact Us</Link>
         <Link to={""}>Blog</Link>
       </nav>
@@ -47,7 +47,7 @@ const Header = () => {
             padding="5px 5px"
             borderRadius="20px"
             fontSize="16px"
-            textColor={"#fff"}
+            textcolor={"#fff"}
           />
           <Button
             children="Login"
@@ -56,7 +56,7 @@ const Header = () => {
             padding="5px 5px"
             borderRadius="20px"
             fontSize="16px"
-            textColor={"#fff"}
+            textcolor={"#fff"}
           />
         </div>
       ) : (
