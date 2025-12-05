@@ -8,7 +8,7 @@ export const productsApi = createApi({
   endpoints: (builder) => ({
     getProducts: builder.query<
       ProductResponse,
-      { limit: number; skip: number; filter?: number }
+      { limit: number; skip: number; filter?: string }
     >({
       query: ({ limit, skip, filter }) =>
         `${filter ? `category/${filter}` : ""}?limit=${limit}&skip=${skip}&select=title,price,images`,

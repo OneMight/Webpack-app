@@ -52,4 +52,6 @@ export interface IAlert {
 export interface ISortingSection {
   name: string;
   filters: FiltersArray[];
+  func: (name: string) => void;
+  selectedFilter: string;
 }

@@ -5,7 +5,7 @@ import {
   useGetProductsQuery,
 } from "../../hooks/productApi";
 import { Input } from "../../components/index";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Product } from "../../types/intefaces";
 export default function CategoriesPage() {
   const {
@@ -14,24 +14,54 @@ export default function CategoriesPage() {
     error: errorCategory,
   } = useGetCategoriesQuery("");
   const [limit, setLimit] = useState<number>(12);
-  const handleLoadMore = () => {
-    setLimit((prev) => prev + 12);
-  };
+  const [selectedFilter, setSelectedFilter] = useState<string>("");
+
   const {
     data,
     isLoading: isLoadingProducts,
     error: errorProduct,
-  } = useGetProductsQuery({ limit: limit, skip: 12 });
+  } = useGetProductsQuery({ limit: limit, skip: 0, filter: selectedFilter });
+  useEffect(() => {
+    if (!data) return;
+
+    setLimit((prev) => {
+      if (data.total < prev) return data.total;
+      else {
+        return prev < data.total && data.total > 6 ? 12 : data.total;
+      }
+    });
+  }, [data?.total]);
+
+  const handleLoadMore = () => {
+    setLimit((prev) => {
+      const add = data.total - prev > 12 ? 12 : data.total - prev;
+      return prev + add;
+    });
+  };
+  const handleSetArrayFilters = (value: string) => {
+    const item = value === selectedFilter ? "" : value;
+    setSelectedFilter(item);
+    setLimit((prev) => {
+      const add = data.total - prev > 12 ? 12 : data.total - prev;
+      return prev + add;
+    });
+  };
   if (isLoadingCategoris || isLoadingProducts) {
     return <p>isLoading</p>;
   }
   if (errorCategory || errorProduct) {
     return <p>Error</p>;
   }
+
   return (
     <main className="main">
       <div className="filter-div">
-        <SortingSection name="Filters" filters={categories} />
+        <SortingSection
+          name="Filters"
+          filters={categories}
+          func={handleSetArrayFilters}
+          selectedFilter={selectedFilter}
+        />
       </div>
       <section className="main-div">
         <div className="main-title">
@@ -63,17 +93,18 @@ export default function CategoriesPage() {
               />
             );
           })}
-          <Button
-            textcolor="#fff"
-            borderRadius="30px"
-            width="200px"
-            padding="10px"
-            fontSize="20px"
-            func={() => handleLoadMore()}
-          >
-            Load More
-          </Button>
         </section>
+        <Button
+          textcolor="#fff"
+          borderRadius="30px"
+          width="200px"
+          padding="10px"
+          fontSize="20px"
+          disabled={limit !== data.total ? false : true}
+          func={() => handleLoadMore()}
+        >
+          Load More
+        </Button>
       </section>
     </main>
   );
