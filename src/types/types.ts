@@ -10,3 +10,9 @@ export type FiltersArray = {
   id: number;
   elem: string;
 };
+export type InputProductApi = {
+  limit: number;
+  skip: number;
+  filter?: string;
+  search?: string;
+};
