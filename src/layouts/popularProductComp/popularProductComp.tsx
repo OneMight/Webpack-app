@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { setProducts } from "../../store/ProductSlice";
 const PopularProductComp = () => {
-  const { data, error, isLoading } = useGetProductsQuery("");
+  const { data, error, isLoading } = useGetProductsQuery({ limit: 8, skip: 0 });
   const dispatch = useAppDispatch();
   useEffect(() => {
     if (data?.products) {
@@ -30,7 +30,7 @@ const PopularProductComp = () => {
         </div>
         <Button
           padding="5px 5px"
-          textColor="#fff"
+          textcolor="#fff"
           borderRadius="20px"
           fontSize="16px"
           width="120px"

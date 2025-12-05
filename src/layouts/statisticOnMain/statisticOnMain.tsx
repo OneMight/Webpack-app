@@ -10,7 +10,7 @@ const StatisticOnMain = () => {
           </h2>
           <Button
             children="Read more"
-            textColor="#000"
+            textcolor="#000"
             backgroundcolor="#fff"
             borderRadius="30px"
             fontSize="20px"

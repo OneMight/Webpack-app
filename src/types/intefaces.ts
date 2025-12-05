@@ -1,3 +1,5 @@
+import { FiltersArray } from "./types";
+
 export interface ButtonInterface {
   backgroundcolor?: string;
   borderColor?: string;
@@ -5,7 +7,7 @@ export interface ButtonInterface {
   borderRadius: string;
   fontSize: string;
   width: string;
-  textColor: string;
+  textcolor: string;
   children?: string;
   disabled?: boolean;
   func?: () => void;
@@ -45,4 +47,9 @@ export interface IRegisterApi {
 }
 export interface IAlert {
   children: string;
+}
+
+export interface ISortingSection {
+  name: string;
+  filters: FiltersArray[];
 }

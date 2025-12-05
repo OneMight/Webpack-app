@@ -1,0 +1,33 @@
+.filters {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid rgb(119, 119, 119);
+  padding: 20px;
+}
+.filters-title {
+  font-family: var(--Oxygen);
+  font-size: 1.25rem;
+  color: #2d2d2d;
+}
+.filter {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+}
+.filter-name {
+  color: #2d2d2d;
+  font-family: var(--Oxygen);
+  margin: 0;
+}
+.filters-display {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+}

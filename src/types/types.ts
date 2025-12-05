@@ -6,3 +6,7 @@ export type UserToken = {
   accessToken: string;
   refreshToken: string;
 };
+export type FiltersArray = {
+  id: number;
+  elem: string;
+};

@@ -4,14 +4,14 @@ import { ButtonInterface } from "../../types/intefaces";
 const ColorButton = styled(Button)(
   ({
     backgroundcolor,
-    textColor,
+    textcolor,
     borderRadius,
     fontSize,
     padding,
     width,
   }: ButtonInterface) => ({
     backgroundColor: backgroundcolor || "rgba(0, 0, 0, 1)",
-    textColor: textColor || "rgba(255, 255, 255, 1)",
+    textcolor: textcolor || "rgba(255, 255, 255, 1)",
     fontFamily: "Exo, sans-serif",
     borderRadius: borderRadius || "20px",
     fontSize: fontSize || "16px",
@@ -26,7 +26,7 @@ const ColorButton = styled(Button)(
 export default function CustomizedButtons(props: ButtonInterface) {
   const {
     children,
-    textColor,
+    textcolor,
     borderRadius,
     fontSize,
     padding,
@@ -40,7 +40,7 @@ export default function CustomizedButtons(props: ButtonInterface) {
       variant="contained"
       backgroundcolor={backgroundcolor}
       borderRadius={borderRadius}
-      textColor={textColor}
+      textcolor={textcolor}
       fontSize={fontSize}
       padding={padding}
       onClick={() => func()}

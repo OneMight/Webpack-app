@@ -107,7 +107,7 @@ export default function Registration() {
               padding="10px 0"
               borderRadius="30px"
               fontSize="20px"
-              textColor="#fff"
+              textcolor="#fff"
               disabled={!checkPolicy}
               func={() => handleRegister()}
             >
