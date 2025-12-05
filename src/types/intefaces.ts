@@ -31,6 +31,7 @@ export interface IInput {
 export interface BaseInput extends IInput {
   styles: object;
   requared?: boolean;
+  value?: string;
 }
 export interface formInput extends IInput {
   label: string;

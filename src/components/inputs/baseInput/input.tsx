@@ -7,12 +7,14 @@ export default function Input({
   type,
   requared,
   func,
+  value,
 }: BaseInput) {
   return (
     <input
       style={styles}
       type={type}
       name={name}
+      value={value}
       onChange={func}
       required={requared}
       placeholder={placeholder}
