@@ -56,3 +56,7 @@ export interface ISortingSection {
   func: (name: string) => void;
   selectedFilter: string;
 }
+export interface IPaymentDiv {
+  title: string;
+  sum: number | string;
+}

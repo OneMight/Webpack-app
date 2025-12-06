@@ -61,13 +61,19 @@ const Header = () => {
         </div>
       ) : (
         <div className="header_controll">
-          <button className="header_buttons">
+          <button
+            className="header_buttons"
+            onClick={() => handleNavigate(ROUTES.BASKET)}
+          >
             <img src="./images/account.svg" alt="account" />
             <img src="./images/bottom-arrow.svg" alt="bottom-arrow" />
           </button>
-          <Link to={""}>
+          <button
+            className="header_buttons"
+            onClick={() => handleNavigate(ROUTES.BASKET)}
+          >
             <img src="./images/orders.svg" alt="orders" />
-          </Link>
+          </button>
         </div>
       )}
     </header>
