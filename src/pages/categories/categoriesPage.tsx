@@ -104,12 +104,7 @@ export default function CategoriesPage() {
         </div>
         <section className="main-data">
           {data.products.map((elem: Product) => (
-            <Card
-              images={elem.images}
-              key={elem.id}
-              title={elem.title}
-              price={elem.price}
-            />
+            <Card thing={elem} key={elem.id} />
           ))}
         </section>
         <Button

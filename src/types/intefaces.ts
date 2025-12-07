@@ -18,6 +18,10 @@ export interface Product {
   price: number;
   images: Array<string> | null;
 }
+export interface ProductCard {
+  thing: Product;
+}
+
 export interface ProductResponse {
   products: Product[];
   total: number;

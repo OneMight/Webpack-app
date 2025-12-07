@@ -13,9 +13,6 @@ export const productsApi = createApi({
     getCategories: builder.query<FiltersArray[], string>({
       query: () => "category-list",
     }),
-    getByFilter: builder.query<ProductResponse, string>({
-      query: (filter) => `category/${filter}`,
-    }),
   }),
 });
 

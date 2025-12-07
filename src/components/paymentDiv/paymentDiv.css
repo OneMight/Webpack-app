@@ -7,12 +7,10 @@
   border-bottom: 1px solid rgb(173, 173, 173);
 }
 .payment-title {
-  font-size: 22px;
   font-family: var(--Oxygen);
   margin: 10px;
 }
 .payment-sum {
-  font-size: 22px;
   color: rgb(173, 173, 173);
   font-family: var(--Oxygen);
   margin: 20px;

@@ -4,4 +4,13 @@ import Card from "./card/card";
 import Input from "./inputs/baseInput/input";
 import SortingSection from "./sortingSection/sortingSection";
 import PaymentDiv from "./paymentDiv/paymentDiv";
-export { AlertMui, Button, Card, Input, SortingSection, PaymentDiv };
+import ProductBasket from "./productBasket/productBasket";
+export {
+  AlertMui,
+  Button,
+  Card,
+  Input,
+  SortingSection,
+  PaymentDiv,
+  ProductBasket,
+};

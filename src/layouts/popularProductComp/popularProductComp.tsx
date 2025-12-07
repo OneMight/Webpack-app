@@ -5,7 +5,7 @@ import Card from "../../components/card/card";
 import { Product } from "../../types/intefaces";
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { setProducts } from "../../store/ProductSlice";
+import { setProducts } from "../../store/userProductSlice";
 const PopularProductComp = () => {
   const { data, error, isLoading } = useGetProductsQuery({ limit: 8, skip: 0 });
   const dispatch = useAppDispatch();
@@ -39,14 +39,7 @@ const PopularProductComp = () => {
       </div>
       <div className="main-page_card-container">
         {productList.map((product: Product) => {
-          return (
-            <Card
-              key={product.id}
-              images={product.images}
-              price={product.price}
-              title={product.title}
-            />
-          );
+          return <Card key={product.id} thing={product} />;
         })}
       </div>
     </section>

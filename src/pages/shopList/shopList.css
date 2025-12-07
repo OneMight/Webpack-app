@@ -8,7 +8,7 @@
 .main-tables {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   width: 95%;
   gap: 50px;
@@ -29,7 +29,7 @@
   justify-content: space-between;
   border-radius: 20px 20px 0 0;
   background-color: rgb(165, 165, 165);
-  padding: 0px 20px;
+  padding: 0px 17px;
 }
 .main-product__table-text {
   font-size: 22px;
@@ -63,4 +63,19 @@
 }
 .right-table {
   margin: 20px;
+}
+.main-shop__not-add {
+  font-size: 30px;
+  font-family: var(--Oxygen);
+  text-align: center;
+}
+.main-product__things {
+  width: 100%;
+  border: 1px solid rgb(173, 173, 173);
+}
+.product-control__button {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 }
