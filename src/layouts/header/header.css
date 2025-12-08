@@ -1,50 +1,51 @@
-.header{
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 40px 0;
+.header {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
 }
-.header_nav{
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
+.header_nav {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 }
-.header_controll{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
+.header_controll {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 }
-.header_buttons{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    background-color: transparent;
-    border: none;
+.header_buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
-.header_nav > a{
-    font-family: var(--Oxygen);
-    text-decoration: none;
-    color: #000;
+.header_nav > a {
+  font-family: var(--Oxygen);
+  text-decoration: none;
+  color: #000;
 }
 
-.header-log-buttons{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
+.header-log-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 }
-.header_button{
-    color: #ffffff;
-    background-color: #000;
+.header_button {
+  color: #ffffff;
+  background-color: #000;
 }
 
 @media (any-hover: hover) {
-    .header_nav > a:hover{
-        color: #c7c7c7;
-        transition: color 0.3s;
-    }
+  .header_nav > a:hover {
+    color: #c7c7c7;
+    transition: color 0.3s;
+  }
 }

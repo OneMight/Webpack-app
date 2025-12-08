@@ -1,0 +1,17 @@
+.payment-div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid rgb(173, 173, 173);
+}
+.payment-title {
+  font-family: var(--Oxygen);
+  margin: 10px;
+}
+.payment-sum {
+  color: rgb(173, 173, 173);
+  font-family: var(--Oxygen);
+  margin: 20px;
+}

@@ -1,5 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { HomePage, Registration, Auth, CategoriesPage } from "../pages/index";
+import {
+  HomePage,
+  Registration,
+  Auth,
+  CategoriesPage,
+  ShopList,
+} from "../pages/index";
 import Header from "../layouts/header/header";
 import Footer from "../layouts/footer/footer";
 import "./index.css";
@@ -13,6 +19,7 @@ export const App = () => {
         <Route path={ROUTES.REGISTER} element={<Registration />} />
         <Route path={ROUTES.LOGIN} element={<Auth />} />
         <Route path={ROUTES.CATEGORIES} element={<CategoriesPage />} />
+        <Route path={ROUTES.BASKET} element={<ShopList />} />
       </Routes>
       <Footer />
     </BrowserRouter>

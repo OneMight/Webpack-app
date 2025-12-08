@@ -18,6 +18,10 @@ export interface Product {
   price: number;
   images: Array<string> | null;
 }
+export interface ProductCard {
+  thing: Product;
+}
+
 export interface ProductResponse {
   products: Product[];
   total: number;
@@ -55,4 +59,8 @@ export interface ISortingSection {
   filters: FiltersArray[];
   func: (name: string) => void;
   selectedFilter: string;
+}
+export interface IPaymentDiv {
+  title: string;
+  sum: number | string;
 }
