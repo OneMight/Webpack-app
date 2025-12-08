@@ -1,16 +1,21 @@
-#root{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-    --Oxygen: "Oxygen", sans-serif;
-    --Exo: Exo sans-serif;
-    font-size: 16px;
-    color: black;
-    min-height: 100vh;
-    position: relative;
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  --Oxygen: "Oxygen", sans-serif;
+  --Exo: Exo sans-serif;
+  font-size: 16px;
+  color: black;
+  min-height: 100vh;
+  position: relative;
+  --White: #ffffff;
+  --BackgroundBlack: #282828;
+  --HoverButtonBlack: #4b4b4b;
+  --TotalBlack: #000000;
+  --HoverButtonGray: #c7c7c7;
 }
-body{
-    margin: 0;
+body {
+  margin: 0;
 }

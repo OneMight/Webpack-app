@@ -10,7 +10,7 @@
 .filters-title {
   font-family: var(--Oxygen);
   font-size: 1.25rem;
-  color: #2d2d2d;
+  color: var(--BackgroundBlack);
 }
 .filter {
   width: 100%;
@@ -21,7 +21,7 @@
   gap: 20px;
 }
 .filter-name {
-  color: #2d2d2d;
+  color: var(--BackgroundBlack);
   font-family: var(--Oxygen);
   margin: 0;
 }
