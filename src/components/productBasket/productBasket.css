@@ -1,17 +1,17 @@
 .product {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  border-bottom: 1px solid rgb(165, 165, 165);
-  padding: 20px 17px;
+  padding: 15px 0;
 }
 .product-left {
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
 }
 .product-desc {
   display: flex;
@@ -26,14 +26,18 @@
 }
 .product-text {
   font-family: var(--Oxygen);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100px;
 }
+
 .product-right {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 30px;
-
+  gap: 5px;
   width: 200px;
 }
 .product-controll {

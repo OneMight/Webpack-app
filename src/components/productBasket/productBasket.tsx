@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./productBasket.css";
 import { useAppDispatch } from "../../app/hooks";
 import { ProductCard } from "../../types/intefaces";
@@ -47,7 +47,7 @@ export default function ProductBasket({ thing }: ProductCard) {
         </div>
       </div>
       <div className="product-right">
-        <p className="product-text">${thing.price}</p>
+        <p className="product-price">${thing.price}</p>
         <div className="product-controll">
           <button
             className="product-control__button"
