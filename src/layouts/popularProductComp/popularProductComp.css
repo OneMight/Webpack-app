@@ -22,11 +22,9 @@
 }
 .main-page_title {
   font-size: 36px;
-  font-family: var(--Oxygen);
   margin: 0;
 }
 .main-page_text {
-  font-family: var(--Oxygen);
   margin: 0;
 }
 .main-page_card-container {

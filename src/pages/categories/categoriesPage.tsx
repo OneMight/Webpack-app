@@ -4,7 +4,7 @@ import { Card, SortingSection, Button, Input } from "../../components/index";
 import {
   useGetCategoriesQuery,
   useGetProductsQuery,
-} from "../../hooks/productApi";
+} from "../../api/productApi";
 import { Product } from "../../types/intefaces";
 
 export default function CategoriesPage() {

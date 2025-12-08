@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-describe">
-        <img src="./images/logo-70-white.svg" alt="logo-white" />
+        <img src="/images/logo-70-white.svg" alt="logo-white" />
         <h2 className="footer-title">
           Subscribe To Your Newsletter to Stay Updated About Discounts
         </h2>

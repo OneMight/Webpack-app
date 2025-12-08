@@ -64,3 +64,38 @@ export interface IPaymentDiv {
   title: string;
   sum: number | string;
 }
+export interface IDimensionsProduct {
+  width: number;
+  height: number;
+  depth: number;
+}
+export interface IReviewProduct {
+  id: number;
+  comment: string;
+  date: string;
+  reviewerName: string;
+  reviewerEmail: string;
+  rating: number;
+}
+export interface IDetailsProduct extends Product {
+  description: string;
+  rating: number;
+  category: string;
+  brand: string;
+  weight: number;
+  dimensions: IDimensionsProduct;
+  shippingInformation: string;
+  returnPolicy: string;
+  reviews: IReviewProduct[];
+}
+export interface IControllPanel {
+  count: number;
+  minus: () => void;
+  plus: () => void;
+}
+export interface IViewDetail {
+  product: IDetailsProduct;
+}
+export interface IReview {
+  review: IReviewProduct;
+}

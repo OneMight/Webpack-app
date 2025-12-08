@@ -27,7 +27,6 @@
   color: var(--TotalBlack);
 }
 .main-subtitle {
-  font-family: var(--Oxygen);
   margin: 0;
 }
 .main-data {

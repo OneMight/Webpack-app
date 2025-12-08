@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import type { ProductResponse } from "../types/intefaces";
+import type { IDetailsProduct, ProductResponse } from "../types/intefaces";
 import { FiltersArray, InputProductApi } from "../types/types";
 
 export const productsApi = createApi({
@@ -13,7 +13,14 @@ export const productsApi = createApi({
     getCategories: builder.query<FiltersArray[], string>({
       query: () => "category-list",
     }),
+    getProductById: builder.query<IDetailsProduct, string>({
+      query: (id) => `${id}`,
+    }),
   }),
 });
 
-export const { useGetProductsQuery, useGetCategoriesQuery } = productsApi;
+export const {
+  useGetProductsQuery,
+  useGetCategoriesQuery,
+  useGetProductByIdQuery,
+} = productsApi;

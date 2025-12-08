@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
 import { useState } from "react";
 import type { User } from "../../types/types";
-import { useGetTokenMutation } from "../../hooks/userApi";
+import { useGetTokenMutation } from "../../api/userApi";
 export default function Auth() {
   const [loginFunc, { isLoading }] = useGetTokenMutation();
   const [user, setUser] = useState<User>({
@@ -76,7 +76,7 @@ export default function Auth() {
         <div className="img">
           <img
             className="image"
-            src="./images/registration-img.jpg"
+            src="/images/registration-img.jpg"
             alt="auth-image"
           />
         </div>

@@ -11,12 +11,12 @@
 }
 .card-title {
   font-size: 22px;
-  font-family: var(--Oxygen);
   margin: 0;
+  text-decoration: none;
+  color: var(--TotalBlack);
 }
 .card-price {
   font-size: 14px;
-  font-family: var(--Oxygen);
   margin: 0;
 }
 .card-controll {

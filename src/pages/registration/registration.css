@@ -30,7 +30,6 @@
 
 .registration-title {
   font-size: 36px;
-  font-family: var(--Oxygen);
   color: var(--TotalBlack);
 }
 .redirect {
@@ -71,7 +70,6 @@
   align-items: center;
   justify-content: start;
   gap: 10px;
-  font-family: var(--Oxygen);
   cursor: pointer;
 }
 .img {
