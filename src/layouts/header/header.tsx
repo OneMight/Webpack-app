@@ -4,7 +4,7 @@ import "./header.css";
 import Button from "../../components/button/button";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useVerifyUserQuery } from "../../hooks/userApi";
+import { useVerifyUserQuery } from "../../api/userApi";
 const Header = () => {
   const navigate = useNavigate();
   const [isLogged, setIsLogged] = useState<boolean>(false);
@@ -25,12 +25,13 @@ const Header = () => {
   useEffect(() => {
     if (isSuccess) {
       setIsLogged(true);
+      console.log(isSuccess);
     }
   }, [isSuccess]);
   return (
     <header className="header">
       <div className="header-image">
-        <img src="./images/logo-70.svg" alt="logo" />
+        <img src="/images/logo-70.svg" alt="logo" />
       </div>
       <nav className="header_nav">
         <Link to={ROUTES.HOME}>Home</Link>
@@ -65,14 +66,14 @@ const Header = () => {
             className="header_buttons"
             onClick={() => handleNavigate(ROUTES.BASKET)}
           >
-            <img src="./images/account.svg" alt="account" />
-            <img src="./images/bottom-arrow.svg" alt="bottom-arrow" />
+            <img src="/images/account.svg" alt="account" />
+            <img src="/images/bottom-arrow.svg" alt="bottom-arrow" />
           </button>
           <button
             className="header_buttons"
             onClick={() => handleNavigate(ROUTES.BASKET)}
           >
-            <img src="./images/orders.svg" alt="orders" />
+            <img src="/images/orders.svg" alt="orders" />
           </button>
         </div>
       )}

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import FormInput from "../../components/inputs/formInput/formInput";
 import Button from "../../components/button/button";
 import { IBaseUser } from "../../types/intefaces";
-import { usePostUserMutation } from "../../hooks/userApi";
+import { usePostUserMutation } from "../../api/userApi";
 import { AlertMui } from "../../components/alert/alert";
 export default function Registration() {
   const handlePreventDefault = (e: React.FormEvent<HTMLElement>) => {
@@ -116,7 +116,7 @@ export default function Registration() {
           </form>
         </div>
         <div className="img">
-          <img className="image" src="./images/registration-img.jpg" alt="" />
+          <img className="image" src="/images/registration-img.jpg" alt="" />
         </div>
       </div>
     </main>

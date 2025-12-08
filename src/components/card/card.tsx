@@ -2,6 +2,8 @@ import { ProductCard } from "../../types/intefaces";
 import "./card.css";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { setProducts, addTotalSum } from "../../store/userProductSlice";
+import { Link } from "react-router-dom";
+import { ROUTES } from "../../utils/routes";
 const Card = ({ thing }: ProductCard) => {
   const dispatch = useAppDispatch();
   const product = useAppSelector((state) => state.userProduct.product);
@@ -14,7 +16,12 @@ const Card = ({ thing }: ProductCard) => {
   return (
     <div className="card-div">
       <img className="card-img" src={thing.images?.[0]} alt={thing.title} />
-      <p className="card-title">{thing.title}</p>
+      <Link
+        to={ROUTES.VIEWPRODUCT.replace(":id", `${thing.id}`)}
+        className="card-title"
+      >
+        {thing.title}
+      </Link>
       <div className="card-controll">
         <p className="card-price">${thing.price}</p>
         <button className="card-button" onClick={() => handleSetProduct()}>

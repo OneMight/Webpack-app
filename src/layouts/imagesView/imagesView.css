@@ -1,0 +1,36 @@
+.images-select {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.images-view {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.small-image {
+  max-width: 120px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.image-cart {
+  max-width: 120px;
+}
+.selected {
+  width: 100%;
+  min-width: 200px;
+  max-width: 500px;
+}
+
+@media (any-hover: hover) {
+  .small-image :hover {
+    box-shadow: 8px 10px 21px -8px rgba(0, 0, 0, 1);
+    transition: all 0.3s;
+  }
+}

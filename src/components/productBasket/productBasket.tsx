@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./productBasket.css";
 import { useAppDispatch } from "../../app/hooks";
 import { ProductCard } from "../../types/intefaces";
+import { ControllPanelCard } from "../index";
 import {
   deleteProduct,
   addTotalSum,
@@ -48,18 +49,11 @@ export default function ProductBasket({ thing }: ProductCard) {
       </div>
       <div className="product-right">
         <p className="product-price">${thing.price}</p>
-        <div className="product-controll">
-          <button
-            className="product-control__button"
-            onClick={handleMinusCount}
-          >
-            -
-          </button>
-          <p className="procut-text">{count}</p>
-          <button className="product-control__button" onClick={handlePlusCount}>
-            +
-          </button>
-        </div>
+        <ControllPanelCard
+          count={count}
+          minus={handleMinusCount}
+          plus={handlePlusCount}
+        />
         <p className="product-total-text">${productPrice}</p>
       </div>
     </section>

@@ -15,7 +15,13 @@
   --HoverButtonBlack: #4b4b4b;
   --TotalBlack: #000000;
   --HoverButtonGray: #c7c7c7;
+  --BackgroundReviews: #f8f8f8;
+  --BorderReview: #d3d3d3;
 }
 body {
   margin: 0;
+}
+p,
+h2 {
+  font-family: var(--Oxygen);
 }

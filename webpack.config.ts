@@ -16,9 +16,10 @@ export default (env: Env) => {
       filename: "[name].js",
       path: path.resolve(__dirname, "build"),
       clean: true,
+      publicPath: "/",
     },
     optimization: {
-      runtimeChunk: "single",
+      runtimeChunk: "multiple",
     },
     devtool: isDev && "inline-source-map",
     module: {
@@ -31,6 +32,13 @@ export default (env: Env) => {
           test: /\.tsx?$/,
           use: "ts-loader",
           exclude: /node_modules/,
+        },
+        {
+          test: /\.(png|jpe?g|gif|svg)$/i,
+          type: "asset/resource",
+          generator: {
+            filename: "assets/[name][hash][ext]",
+          },
         },
       ],
     },

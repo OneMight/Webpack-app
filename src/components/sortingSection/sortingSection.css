@@ -8,7 +8,6 @@
   padding: 20px;
 }
 .filters-title {
-  font-family: var(--Oxygen);
   font-size: 1.25rem;
   color: var(--BackgroundBlack);
 }
@@ -22,7 +21,6 @@
 }
 .filter-name {
   color: var(--BackgroundBlack);
-  font-family: var(--Oxygen);
   margin: 0;
 }
 .filters-display {

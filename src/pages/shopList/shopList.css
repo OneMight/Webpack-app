@@ -34,7 +34,6 @@
 }
 .main-product__table-text {
   font-size: 22px;
-  font-family: var(--Oxygen);
   color: var(--White);
 }
 .main-product__header-table {
@@ -67,7 +66,6 @@
 }
 .main-shop__not-add {
   font-size: 30px;
-  font-family: var(--Oxygen);
   text-align: center;
 }
 .main-product__things {

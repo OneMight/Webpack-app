@@ -26,7 +26,6 @@
   height: 50px;
 }
 .product-text {
-  font-family: var(--Oxygen);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -40,11 +39,4 @@
   justify-content: space-between;
   gap: 5px;
   width: 200px;
-}
-.product-controll {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
 }

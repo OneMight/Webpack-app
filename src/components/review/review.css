@@ -1,0 +1,17 @@
+.review-user {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 70%;
+  border: 1px solid var(--BorderReview);
+  padding: 10px;
+  border-radius: 20px;
+}
+.review-rate {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
