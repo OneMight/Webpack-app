@@ -3,19 +3,11 @@ import Button from "../../components/button/button";
 import { useGetProductsQuery } from "../../hooks/productApi";
 import Card from "../../components/card/card";
 import { Product } from "../../types/intefaces";
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { setProducts } from "../../store/userProductSlice";
+import { useAppDispatch } from "../../app/hooks";
 const PopularProductComp = () => {
   const { data, error, isLoading } = useGetProductsQuery({ limit: 8, skip: 0 });
   const dispatch = useAppDispatch();
-  useEffect(() => {
-    if (data?.products) {
-      dispatch(setProducts(data.products));
-    }
-  }, [data]);
 
-  const products = useAppSelector((state: any) => state.product);
   if (isLoading || error) {
     return <p>Loading....</p>;
   }
