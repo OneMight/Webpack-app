@@ -64,7 +64,7 @@ export default function Auth() {
             <Button
               width="100%"
               padding="10px 0"
-              borderRadius="30px"
+              borderradius="30px"
               fontSize="20px"
               textcolor="#fff"
               func={() => handleGetToken()}

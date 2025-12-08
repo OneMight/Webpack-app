@@ -12,7 +12,7 @@ const StatisticOnMain = () => {
             children="Read more"
             textcolor="#000"
             backgroundcolor="#fff"
-            borderRadius="30px"
+            borderradius="30px"
             fontSize="20px"
             padding="5px 10px"
             width="150px"

@@ -35,7 +35,7 @@
 .main-product__table-text {
   font-size: 22px;
   font-family: var(--Oxygen);
-  color: white;
+  color: var(--White);
 }
 .main-product__header-table {
   display: flex;

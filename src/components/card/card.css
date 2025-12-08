@@ -27,7 +27,7 @@
   justify-content: space-between;
 }
 .card-button {
-  border: 1px solid black;
+  border: 1px solid var(--TotalBlack);
   padding: 3px;
   font-size: 14px;
   border-radius: 60px;

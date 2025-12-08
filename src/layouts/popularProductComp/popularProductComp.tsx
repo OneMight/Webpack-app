@@ -3,10 +3,14 @@ import Button from "../../components/button/button";
 import { useGetProductsQuery } from "../../hooks/productApi";
 import Card from "../../components/card/card";
 import { Product } from "../../types/intefaces";
-import { useAppDispatch } from "../../app/hooks";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../utils/routes";
 const PopularProductComp = () => {
   const { data, error, isLoading } = useGetProductsQuery({ limit: 8, skip: 0 });
-  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const handleDirectToShop = () => {
+    navigate(ROUTES.CATEGORIES);
+  };
 
   if (isLoading || error) {
     return <p>Loading....</p>;
@@ -23,9 +27,10 @@ const PopularProductComp = () => {
         <Button
           padding="5px 5px"
           textcolor="#fff"
-          borderRadius="20px"
+          borderradius="20px"
           fontSize="16px"
           width="120px"
+          func={handleDirectToShop}
           children="View All"
         />
       </div>
