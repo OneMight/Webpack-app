@@ -4,7 +4,7 @@ export interface ButtonInterface {
   backgroundcolor?: string;
   borderColor?: string;
   padding: string;
-  borderRadius: string;
+  borderradius: string;
   fontSize: string;
   width: string;
   textcolor: string;

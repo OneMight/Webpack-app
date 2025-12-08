@@ -109,7 +109,7 @@ export default function CategoriesPage() {
         </section>
         <Button
           textcolor="#fff"
-          borderRadius="30px"
+          borderradius="30px"
           width="200px"
           padding="10px"
           fontSize="20px"

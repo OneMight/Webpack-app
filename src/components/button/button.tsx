@@ -5,15 +5,15 @@ const ColorButton = styled(Button)(
   ({
     backgroundcolor,
     textcolor,
-    borderRadius,
+    borderradius,
     fontSize,
     padding,
     width,
   }: ButtonInterface) => ({
     backgroundColor: backgroundcolor || "rgba(0, 0, 0, 1)",
-    textcolor: textcolor || "rgba(255, 255, 255, 1)",
+    color: textcolor || "rgba(255, 255, 255, 1)",
     fontFamily: "Exo, sans-serif",
-    borderRadius: borderRadius || "20px",
+    borderRadius: borderradius || "20px",
     fontSize: fontSize || "16px",
     padding: padding || "13px",
     display: "flex",
@@ -27,7 +27,7 @@ export default function CustomizedButtons(props: ButtonInterface) {
   const {
     children,
     textcolor,
-    borderRadius,
+    borderradius,
     fontSize,
     padding,
     disabled,
@@ -39,7 +39,7 @@ export default function CustomizedButtons(props: ButtonInterface) {
     <ColorButton
       variant="contained"
       backgroundcolor={backgroundcolor}
-      borderRadius={borderRadius}
+      borderradius={borderradius}
       textcolor={textcolor}
       fontSize={fontSize}
       padding={padding}

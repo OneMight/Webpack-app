@@ -15,6 +15,7 @@ export default function SortingSection({
             <label key={id} className="filter">
               <input
                 type="checkbox"
+                name={String(elem)}
                 checked={selectedFilter === String(elem)}
                 onChange={() => func(String(elem))}
                 className="filter-checkbox"

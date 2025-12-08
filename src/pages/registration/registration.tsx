@@ -105,7 +105,7 @@ export default function Registration() {
             <Button
               width="100%"
               padding="10px 0"
-              borderRadius="30px"
+              borderradius="30px"
               fontSize="20px"
               textcolor="#fff"
               disabled={!checkPolicy}

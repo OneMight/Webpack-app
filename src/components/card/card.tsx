@@ -1,12 +1,15 @@
 import { ProductCard } from "../../types/intefaces";
 import "./card.css";
-import { useAppDispatch } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { setProducts, addTotalSum } from "../../store/userProductSlice";
 const Card = ({ thing }: ProductCard) => {
   const dispatch = useAppDispatch();
+  const product = useAppSelector((state) => state.userProduct.product);
   const handleSetProduct = () => {
-    dispatch(setProducts(thing));
-    dispatch(addTotalSum(thing.price));
+    if (!product.includes(thing)) {
+      dispatch(setProducts(thing));
+      dispatch(addTotalSum(thing.price));
+    }
   };
   return (
     <div className="card-div">

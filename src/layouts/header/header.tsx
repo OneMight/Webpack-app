@@ -45,7 +45,7 @@ const Header = () => {
             func={() => handleNavigate(ROUTES.REGISTER)}
             width="120px"
             padding="5px 5px"
-            borderRadius="20px"
+            borderradius="20px"
             fontSize="16px"
             textcolor={"#fff"}
           />
@@ -54,7 +54,7 @@ const Header = () => {
             func={() => handleNavigate(ROUTES.LOGIN)}
             width="120px"
             padding="5px 5px"
-            borderRadius="20px"
+            borderradius="20px"
             fontSize="16px"
             textcolor={"#fff"}
           />
