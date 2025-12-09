@@ -43,7 +43,7 @@ export const ViewProductDetails = ({ product }: IViewDetail) => {
             <Button
               borderradius="20px"
               fontSize="18px"
-              width="75%"
+              width="100%"
               backgroundcolor="#000"
               padding="5px 0"
               textcolor="#fff"
