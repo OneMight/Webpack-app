@@ -18,11 +18,8 @@ export interface Product {
   price: number;
   images: Array<string> | null;
 }
-export interface AddedProduct extends Product {
-  count: number;
-}
 export interface ProductCard {
-  thing: AddedProduct;
+  thing: Product;
 }
 
 export interface ProductResponse {
@@ -80,7 +77,7 @@ export interface IReviewProduct {
   reviewerEmail: string;
   rating: number;
 }
-export interface IDetailsProduct extends AddedProduct {
+export interface IDetailsProduct extends Product {
   description: string;
   rating: number;
   category: string;
