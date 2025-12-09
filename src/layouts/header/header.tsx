@@ -5,14 +5,17 @@ import Button from "../../components/button/button";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useVerifyUserQuery } from "../../api/userApi";
+import ModalUI from "../modalUI/modalUI";
 const Header = () => {
   const navigate = useNavigate();
   const [isLogged, setIsLogged] = useState<boolean>(false);
-
+  const [open, setOpen] = useState<boolean>(false);
   const handleNavigate = (route: string) => {
     navigate(route);
   };
-
+  const handleOpenModal = () => {
+    setOpen(true);
+  };
   const handleGetToken = (name: string) => {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
@@ -29,6 +32,7 @@ const Header = () => {
   }, [isSuccess]);
   return (
     <header className="header">
+      <ModalUI setOpen={setOpen} open={open}></ModalUI>
       <div className="header-image">
         <img src="/images/logo-70.svg" alt="logo" />
       </div>
@@ -59,10 +63,7 @@ const Header = () => {
         </div>
       ) : (
         <div className="header_controll">
-          <button
-            className="header_buttons"
-            onClick={() => handleNavigate(ROUTES.BASKET)}
-          >
+          <button className="header_buttons" onClick={() => handleOpenModal()}>
             <img src="/images/account.svg" alt="account" />
             <img src="/images/bottom-arrow.svg" alt="bottom-arrow" />
           </button>
