@@ -5,7 +5,7 @@ import {
   useGetCategoriesQuery,
   useGetProductsQuery,
 } from "../../api/productApi";
-import { Product } from "../../types/intefaces";
+import { AddedProduct } from "../../types/intefaces";
 
 export default function CategoriesPage() {
   const {
@@ -103,7 +103,7 @@ export default function CategoriesPage() {
           </p>
         </div>
         <section className="main-data">
-          {data.products.map((elem: Product) => (
+          {data.products.map((elem: AddedProduct) => (
             <Card thing={elem} key={elem.id} />
           ))}
         </section>

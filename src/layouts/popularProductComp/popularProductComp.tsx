@@ -2,7 +2,7 @@ import "./popularProductComp.css";
 import Button from "../../components/button/button";
 import { useGetProductsQuery } from "../../api/productApi";
 import Card from "../../components/card/card";
-import { Product } from "../../types/intefaces";
+import { AddedProduct } from "../../types/intefaces";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
 const PopularProductComp = () => {
@@ -35,7 +35,7 @@ const PopularProductComp = () => {
         />
       </div>
       <div className="main-page_card-container">
-        {productList.map((product: Product) => {
+        {productList.map((product: AddedProduct) => {
           return <Card key={product.id} thing={product} />;
         })}
       </div>

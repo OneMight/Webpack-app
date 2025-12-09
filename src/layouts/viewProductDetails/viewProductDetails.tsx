@@ -1,20 +1,35 @@
-import { useParams } from "react-router-dom";
 import "./viewProductDetails.css";
-import { useGetProductByIdQuery } from "../../api/productApi";
 import { ControllPanelCard, Button } from "../../components";
 import Rating from "@mui/material/Rating";
 import { ImagesView } from "../index";
 import { useState } from "react";
 import { IViewDetail } from "../../types/intefaces";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import {
+  setProducts,
+  addTotalSum,
+  plusCount,
+  minusCount,
+} from "../../store/userProductSlice";
 export const ViewProductDetails = ({ product }: IViewDetail) => {
+  const dispatch = useAppDispatch();
   const [count, setCount] = useState<number>(1);
-  const handleMinusCount = () => {
+  const thing = useAppSelector((state) => state.userProduct.product);
+  const handleMinusCount = (product: IViewDetail) => {
     if (count != 1) {
       setCount((prev) => prev - 1);
+      minusCount(product);
     }
   };
-  const handlePlusCount = () => {
+  const handlePlusCount = (product: IViewDetail) => {
     setCount((prev) => prev + 1);
+    dispatch(plusCount(product));
+  };
+  const handleAddToBasket = ({ product }: IViewDetail) => {
+    if (!thing.includes(product)) {
+      dispatch(setProducts(product));
+      dispatch(addTotalSum(product.price));
+    }
   };
 
   return (
@@ -44,8 +59,8 @@ export const ViewProductDetails = ({ product }: IViewDetail) => {
           <div className="product-card-add-to-cart">
             <ControllPanelCard
               count={count}
-              minus={handleMinusCount}
-              plus={handlePlusCount}
+              minus={() => handleMinusCount({ product })}
+              plus={() => handlePlusCount({ product })}
             />
             <Button
               borderradius="20px"
@@ -55,6 +70,7 @@ export const ViewProductDetails = ({ product }: IViewDetail) => {
               padding="5px 0"
               textcolor="#fff"
               children="Add to Cart"
+              func={() => handleAddToBasket({ product })}
             />
           </div>
           <Button
@@ -66,6 +82,7 @@ export const ViewProductDetails = ({ product }: IViewDetail) => {
             borderColor="#000"
             textcolor="#000"
             children="Buy now"
+            func={() => {}}
           />
         </div>
         <div>
