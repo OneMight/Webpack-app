@@ -13,6 +13,7 @@ const Card = ({ thing, setError }: ProductCard) => {
       dispatch(addTotalSum(thing.price));
     } else {
       setError("You already add this product to cart");
+      return;
     }
   };
   return (

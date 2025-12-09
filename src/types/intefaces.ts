@@ -101,3 +101,7 @@ export interface IViewDetail {
 export interface IReview {
   review: IReviewProduct;
 }
+export interface IModalUI {
+  open: boolean;
+  setOpen: (value: boolean) => void;
+}
