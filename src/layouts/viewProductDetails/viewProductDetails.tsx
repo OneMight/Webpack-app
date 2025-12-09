@@ -1,8 +1,7 @@
 import "./viewProductDetails.css";
-import { ControllPanelCard, Button } from "../../components";
+import { Button } from "../../components";
 import Rating from "@mui/material/Rating";
 import { ImagesView } from "../index";
-import { useState } from "react";
 import { IViewDetail } from "../../types/intefaces";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { setProducts, addTotalSum } from "../../store/userProductSlice";
