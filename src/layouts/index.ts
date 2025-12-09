@@ -4,6 +4,8 @@ import PopularProductComp from "./popularProductComp/popularProductComp";
 import StatisticOnMain from "./statisticOnMain/statisticOnMain";
 import ViewProductDetails from "./viewProductDetails/viewProductDetails";
 import ImagesView from "./imagesView/imagesView";
+import ModalUI from "./modalUI/modalUI";
+import PositionedMenu from "./burger/burger";
 export {
   Footer,
   Header,
@@ -11,4 +13,6 @@ export {
   StatisticOnMain,
   ViewProductDetails,
   ImagesView,
+  ModalUI,
+  PositionedMenu,
 };

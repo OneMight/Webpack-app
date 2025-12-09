@@ -105,3 +105,9 @@ export interface IModalUI {
   open: boolean;
   setOpen: (value?: boolean) => void;
 }
+export interface IBurger {
+  opened: boolean;
+  setOpened: (value: boolean) => void;
+  isLogged: boolean;
+  setOpenModal: () => void;
+}

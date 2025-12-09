@@ -6,10 +6,12 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useVerifyUserQuery } from "../../api/userApi";
 import ModalUI from "../modalUI/modalUI";
+import { PositionedMenu } from "../index";
 const Header = () => {
   const navigate = useNavigate();
   const [isLogged, setIsLogged] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
+  const [openedBurger, setOpenedBurger] = useState<boolean>(false);
   const handleNavigate = (route: string) => {
     navigate(route);
   };
@@ -40,6 +42,15 @@ const Header = () => {
         <Link to={ROUTES.HOME}>Home</Link>
         <Link to={ROUTES.CATEGORIES}>Categories</Link>
       </nav>
+      <div className="burger-menu">
+        <PositionedMenu
+          opened={openedBurger}
+          setOpenModal={handleOpenModal}
+          setOpened={setOpenedBurger}
+          isLogged={isLogged}
+        />
+      </div>
+
       {!isLogged ? (
         <div className="header-log-buttons">
           <Button
