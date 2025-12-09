@@ -61,6 +61,7 @@ export interface ISortingSection {
   filters: FiltersArray[];
   func: (name: string) => void;
   selectedFilter: string;
+  openedFilters: boolean;
 }
 export interface IPaymentDiv {
   title: string;

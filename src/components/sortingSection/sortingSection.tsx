@@ -4,10 +4,11 @@ export default function SortingSection({
   name,
   filters,
   func,
+  openedFilters,
   selectedFilter,
 }: ISortingSection) {
   return (
-    <div className="filters">
+    <div className={`filters ${openedFilters ? "open-filter" : ""}`}>
       <h2 className="filters-title">{name}</h2>
       <div className="filters-display">
         {filters.map((elem, id) => {

@@ -83,3 +83,24 @@
   font-size: 20px;
   cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+  .main-tables {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .main-product-list {
+    width: 95%;
+  }
+  .main-total-sum {
+    width: 95%;
+  }
+  .main-product__table-text {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .main-shop-list {
+    justify-content: start;
+  }
+}

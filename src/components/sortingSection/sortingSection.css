@@ -6,6 +6,7 @@
   flex-direction: column;
   border: 1px solid rgb(119, 119, 119);
   padding: 20px;
+  background-color: var(--White);
 }
 .filters-title {
   font-size: 1.25rem;
@@ -28,4 +29,15 @@
   flex-direction: column;
   align-items: start;
   gap: 5px;
+}
+@media (max-width: 768px) {
+  .filters {
+    position: absolute;
+    left: 0;
+    transform: translate(-400px);
+    transition: all 0.3s;
+  }
+  .open-filter {
+    transform: translate(0);
+  }
 }
