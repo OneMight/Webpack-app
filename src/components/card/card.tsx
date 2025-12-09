@@ -8,7 +8,7 @@ const Card = ({ thing, setError }: ProductCard) => {
   const dispatch = useAppDispatch();
   const product = useAppSelector((state) => state.userProduct.product);
   const handleSetProduct = () => {
-    if (!product.includes(thing)) {
+    if (product.every((elem) => elem.title !== thing.title)) {
       dispatch(setProducts(thing));
       dispatch(addTotalSum(thing.price));
     } else {

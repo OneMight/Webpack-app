@@ -103,5 +103,5 @@ export interface IReview {
 }
 export interface IModalUI {
   open: boolean;
-  setOpen: (value: boolean) => void;
+  setOpen: (value?: boolean) => void;
 }

@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./categoriesPage.css";
-import { Card, SortingSection, Button, Input } from "../../components/index";
+import {
+  Card,
+  SortingSection,
+  Button,
+  Input,
+  AlertMui,
+} from "../../components/index";
 import {
   useGetCategoriesQuery,
   useGetProductsQuery,
@@ -13,6 +19,7 @@ export default function CategoriesPage() {
     isLoading: isLoadingCategoris,
     error: errorCategory,
   } = useGetCategoriesQuery("");
+  const [addError, setErrorLog] = useState<string>(null);
   const [limit, setLimit] = useState<number>(12);
   const [selectedFilter, setSelectedFilter] = useState<string>("");
   const [search, setSearch] = useState<string>("");
@@ -71,6 +78,7 @@ export default function CategoriesPage() {
 
   return (
     <main className="main">
+      {addError && <AlertMui setError={setErrorLog}>{addError}</AlertMui>}
       <div className="filter-div">
         <SortingSection
           name="Filters"
@@ -104,7 +112,7 @@ export default function CategoriesPage() {
         </div>
         <section className="main-data">
           {data.products.map((elem: Product) => (
-            <Card thing={elem} key={elem.id} />
+            <Card thing={elem} setError={setErrorLog} key={elem.id} />
           ))}
         </section>
         <Button

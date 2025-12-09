@@ -5,13 +5,13 @@ import { ImagesView } from "../index";
 import { IViewDetail } from "../../types/intefaces";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { setProducts, addTotalSum } from "../../store/userProductSlice";
-import { useState } from "react";
-export const ViewProductDetails = ({ product }: IViewDetail) => {
+import { memo, useState } from "react";
+export const ViewProductDetails = memo(({ product }: IViewDetail) => {
   const dispatch = useAppDispatch();
   const [error, setError] = useState<string>(null);
   const thing = useAppSelector((state) => state.userProduct.product);
   const handleAddToBasket = ({ product }: IViewDetail) => {
-    if (!thing.includes(product)) {
+    if (thing.every((elem) => elem.title !== product.title)) {
       dispatch(setProducts(product));
       dispatch(addTotalSum(product.price));
     } else {
@@ -81,5 +81,5 @@ export const ViewProductDetails = ({ product }: IViewDetail) => {
       </div>
     </section>
   );
-};
-export default ViewProductDetails;
+});
+export default memo(ViewProductDetails);
