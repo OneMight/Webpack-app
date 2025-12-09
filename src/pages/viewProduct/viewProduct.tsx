@@ -20,8 +20,8 @@ export default function ViewProduct() {
       <section className="main-description-product">
         <div className="review-section">
           <h2 className="review-section__title">Reviews</h2>
-          {product.reviews?.map((review) => {
-            return <Review review={review} />;
+          {product.reviews?.map((review, ids) => {
+            return <Review key={ids} review={review} />;
           })}
         </div>
       </section>

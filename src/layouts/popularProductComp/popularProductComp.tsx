@@ -2,9 +2,9 @@ import "./popularProductComp.css";
 import Button from "../../components/button/button";
 import { useGetProductsQuery } from "../../api/productApi";
 import Card from "../../components/card/card";
-import { Product } from "../../types/intefaces";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
+import { Product } from "../../types/intefaces";
 const PopularProductComp = () => {
   const { data, error, isLoading } = useGetProductsQuery({ limit: 8, skip: 0 });
   const navigate = useNavigate();

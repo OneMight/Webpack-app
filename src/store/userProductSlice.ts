@@ -3,11 +3,13 @@ import type { Product } from "../types/intefaces";
 interface Products {
   product: Product[];
   subtotal: number;
+  error: string;
 }
 
 const initialState: Products = {
   product: [],
   subtotal: 0,
+  error: null,
 };
 
 const userProductSlice = createSlice({
@@ -15,6 +17,10 @@ const userProductSlice = createSlice({
   initialState,
   reducers: {
     setProducts(state, actions) {
+      if (state.product.includes(actions.payload)) {
+        state.error = "You currently added this product to cart";
+        return;
+      }
       state.product = state.product.concat(actions.payload);
     },
     deleteProduct(state, actions) {

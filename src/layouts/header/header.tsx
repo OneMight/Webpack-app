@@ -36,8 +36,6 @@ const Header = () => {
       <nav className="header_nav">
         <Link to={ROUTES.HOME}>Home</Link>
         <Link to={ROUTES.CATEGORIES}>Categories</Link>
-        <Link to={""}>Contact Us</Link>
-        <Link to={""}>Blog</Link>
       </nav>
       {!isLogged ? (
         <div className="header-log-buttons">

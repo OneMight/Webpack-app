@@ -1,20 +1,19 @@
-import { useParams } from "react-router-dom";
 import "./viewProductDetails.css";
-import { useGetProductByIdQuery } from "../../api/productApi";
 import { ControllPanelCard, Button } from "../../components";
 import Rating from "@mui/material/Rating";
 import { ImagesView } from "../index";
 import { useState } from "react";
 import { IViewDetail } from "../../types/intefaces";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { setProducts, addTotalSum } from "../../store/userProductSlice";
 export const ViewProductDetails = ({ product }: IViewDetail) => {
-  const [count, setCount] = useState<number>(1);
-  const handleMinusCount = () => {
-    if (count != 1) {
-      setCount((prev) => prev - 1);
+  const dispatch = useAppDispatch();
+  const thing = useAppSelector((state) => state.userProduct.product);
+  const handleAddToBasket = ({ product }: IViewDetail) => {
+    if (!thing.includes(product)) {
+      dispatch(setProducts(product));
+      dispatch(addTotalSum(product.price));
     }
-  };
-  const handlePlusCount = () => {
-    setCount((prev) => prev + 1);
   };
 
   return (
@@ -42,11 +41,6 @@ export const ViewProductDetails = ({ product }: IViewDetail) => {
         </div>
         <div className="product-card-controll-panel">
           <div className="product-card-add-to-cart">
-            <ControllPanelCard
-              count={count}
-              minus={handleMinusCount}
-              plus={handlePlusCount}
-            />
             <Button
               borderradius="20px"
               fontSize="18px"
@@ -55,6 +49,7 @@ export const ViewProductDetails = ({ product }: IViewDetail) => {
               padding="5px 0"
               textcolor="#fff"
               children="Add to Cart"
+              func={() => handleAddToBasket({ product })}
             />
           </div>
           <Button
@@ -66,6 +61,7 @@ export const ViewProductDetails = ({ product }: IViewDetail) => {
             borderColor="#000"
             textcolor="#000"
             children="Buy now"
+            func={() => {}}
           />
         </div>
         <div>
