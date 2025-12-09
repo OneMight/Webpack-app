@@ -5,6 +5,7 @@ export type User = {
 export type UserToken = {
   accessToken: string;
   refreshToken: string;
+  message: string;
 };
 export type FiltersArray = {
   id: number;

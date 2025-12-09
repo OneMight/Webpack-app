@@ -1,22 +1,27 @@
 import "./viewProductDetails.css";
-import { Button } from "../../components";
+import { AlertMui, Button } from "../../components";
 import Rating from "@mui/material/Rating";
 import { ImagesView } from "../index";
 import { IViewDetail } from "../../types/intefaces";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { setProducts, addTotalSum } from "../../store/userProductSlice";
+import { useState } from "react";
 export const ViewProductDetails = ({ product }: IViewDetail) => {
   const dispatch = useAppDispatch();
+  const [error, setError] = useState<string>(null);
   const thing = useAppSelector((state) => state.userProduct.product);
   const handleAddToBasket = ({ product }: IViewDetail) => {
     if (!thing.includes(product)) {
       dispatch(setProducts(product));
       dispatch(addTotalSum(product.price));
+    } else {
+      setError("You already add this product to cart");
     }
   };
 
   return (
     <section className="product-card">
+      {error && <AlertMui setError={setError}>{error}</AlertMui>}
       <ImagesView thing={product} />
       <div className="product-card-description">
         <div className="product-card-main-information">

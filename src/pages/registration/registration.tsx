@@ -29,13 +29,11 @@ export default function Registration() {
       setError("Username is small");
       return;
     }
-
-    setError(null);
     adduser(newUser);
   };
   return (
     <main className="registration-page">
-      {error && <AlertMui>{error}</AlertMui>}
+      {error && <AlertMui setError={setError}>{error}</AlertMui>}
       <div className="registration">
         <div className="registration-con">
           <div className="registration-text">

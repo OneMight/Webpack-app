@@ -4,13 +4,15 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { setProducts, addTotalSum } from "../../store/userProductSlice";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
-const Card = ({ thing }: ProductCard) => {
+const Card = ({ thing, setError }: ProductCard) => {
   const dispatch = useAppDispatch();
   const product = useAppSelector((state) => state.userProduct.product);
   const handleSetProduct = () => {
     if (!product.includes(thing)) {
       dispatch(setProducts(thing));
       dispatch(addTotalSum(thing.price));
+    } else {
+      setError("You already add this product to cart");
     }
   };
   return (

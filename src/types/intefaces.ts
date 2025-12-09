@@ -20,6 +20,7 @@ export interface Product {
 }
 export interface ProductCard {
   thing: Product;
+  setError?: (error: string | null) => void;
 }
 
 export interface ProductResponse {
@@ -52,6 +53,7 @@ export interface IRegisterApi {
 }
 export interface IAlert {
   children: string;
+  setError: (error: string | null) => void;
 }
 
 export interface ISortingSection {

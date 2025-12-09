@@ -5,8 +5,11 @@ import Card from "../../components/card/card";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
 import { Product } from "../../types/intefaces";
+import { useState } from "react";
+import { AlertMui } from "../../components";
 const PopularProductComp = () => {
   const { data, error, isLoading } = useGetProductsQuery({ limit: 8, skip: 0 });
+  const [addError, setError] = useState<string>(null);
   const navigate = useNavigate();
   const handleDirectToShop = () => {
     navigate(ROUTES.CATEGORIES);
@@ -19,6 +22,7 @@ const PopularProductComp = () => {
 
   return (
     <section className="main-page_section">
+      {addError && <AlertMui setError={setError}>{addError}</AlertMui>}
       <div className="main-page_direction">
         <div className="main-page_title-text">
           <h1 className="main-page_title">Most Popular Products</h1>
@@ -36,7 +40,7 @@ const PopularProductComp = () => {
       </div>
       <div className="main-page_card-container">
         {productList.map((product: Product) => {
-          return <Card key={product.id} thing={product} />;
+          return <Card key={product.id} setError={setError} thing={product} />;
         })}
       </div>
     </section>
