@@ -20,11 +20,18 @@ export const AlertMui = ({ children, setError }: IAlert) => {
     };
   }, []);
   return (
-    <Box sx={{ position: "fixed", top: "80px", zIndex: 10 }}>
+    <Box
+      sx={{
+        position: "fixed",
+        top: "80px",
+        zIndex: 10,
+      }}
+    >
       <Collapse in={open}>
         <Alert
           variant="filled"
           severity="error"
+          sx={{ display: "flex", alignItems: "center" }}
           action={
             <IconButton aria-label="close" onClick={handleCloseAlert}>
               <CloseIcon />
