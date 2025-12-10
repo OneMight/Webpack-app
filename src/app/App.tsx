@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import {
   HomePage,
   Registration,
@@ -13,7 +13,7 @@ import "./index.css";
 import { ROUTES } from "../utils/routes";
 export const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header />
       <Suspense fallback="loading...">
         <Routes>
@@ -26,6 +26,6 @@ export const App = () => {
         </Routes>
       </Suspense>
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   );
 };
