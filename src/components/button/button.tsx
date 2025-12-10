@@ -46,7 +46,6 @@ export default function CustomizedButtons(props: ButtonInterface) {
       onClick={() => func()}
       width={width}
       disabled={disabled}
-      onClickCapture={() => func()}
     >
       {children}
     </ColorButton>
