@@ -19,7 +19,11 @@ export default function Footer() {
             className="email-subscription"
           />
           <button type="button" name="submit-button" className="submit-button">
-            {">"}
+            <img
+              className="arrow-right"
+              src="/images/right-arrow.svg"
+              alt="arrow-right"
+            />
           </button>
         </form>
       </div>

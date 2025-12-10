@@ -51,9 +51,9 @@ export default function Auth() {
           </div>
           <form className="auth-inputs" onSubmit={handlePreventDefault}>
             <FormInput
-              label="Enter Your Email"
-              name="email"
-              placeholder="Enter email"
+              label="Enter Your Username"
+              name="username"
+              placeholder="Enter username"
               type="text"
               func={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setUser((prev) => ({ ...prev, username: e.target.value }))

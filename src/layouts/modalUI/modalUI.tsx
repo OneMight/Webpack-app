@@ -2,6 +2,8 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
 import { IModalUI } from "../../types/intefaces";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../utils/routes";
 
 const style = {
   position: "absolute",
@@ -20,6 +22,7 @@ const style = {
 };
 
 export default function ModalUI({ setOpen, open }: IModalUI) {
+  const navigate = useNavigate();
   const handleClose = () => {
     setOpen(false);
   };
@@ -30,6 +33,7 @@ export default function ModalUI({ setOpen, open }: IModalUI) {
       document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     });
     window.location.reload();
+    navigate(ROUTES.HOME);
   };
   return (
     <Modal

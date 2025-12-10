@@ -25,7 +25,7 @@ const Header = () => {
   };
   const accessToken = handleGetToken("accessToken");
   const { data, isSuccess } = useVerifyUserQuery(accessToken, {
-    skip: !accessToken,
+    skip: accessToken == null,
   });
   useEffect(() => {
     if (isSuccess) {

@@ -4,24 +4,20 @@ import Rating from "@mui/material/Rating";
 import { ImagesView } from "../index";
 import { IViewDetail } from "../../types/intefaces";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { setProducts, addTotalSum } from "../../store/userProductSlice";
-import { memo, useState } from "react";
+import { setProducts, clearError } from "../../store/userProductSlice";
+import { memo } from "react";
 export const ViewProductDetails = memo(({ product }: IViewDetail) => {
+  const error = useAppSelector((state) => state.userProduct.error);
   const dispatch = useAppDispatch();
-  const [error, setError] = useState<string>(null);
-  const thing = useAppSelector((state) => state.userProduct.product);
-  const handleAddToBasket = ({ product }: IViewDetail) => {
-    if (thing.every((elem) => elem.title !== product.title)) {
-      dispatch(setProducts(product));
-      dispatch(addTotalSum(product.price));
-    } else {
-      setError("You already add this product to cart");
-    }
+  const handleAddToBasket = () => {
+    dispatch(setProducts(product));
   };
-
+  const handleClearError = () => {
+    dispatch(clearError());
+  };
   return (
     <section className="product-card">
-      {error && <AlertMui setError={setError}>{error}</AlertMui>}
+      {error && <AlertMui setError={handleClearError}>{error}</AlertMui>}
       <ImagesView thing={product} />
       <div className="product-card-description">
         <div className="product-card-main-information">
@@ -53,7 +49,7 @@ export const ViewProductDetails = memo(({ product }: IViewDetail) => {
               padding="5px 0"
               textcolor="#fff"
               children="Add to Cart"
-              func={() => handleAddToBasket({ product })}
+              func={handleAddToBasket}
             />
           </div>
           <Button
@@ -82,4 +78,4 @@ export const ViewProductDetails = memo(({ product }: IViewDetail) => {
     </section>
   );
 });
-export default memo(ViewProductDetails);
+export default ViewProductDetails;
