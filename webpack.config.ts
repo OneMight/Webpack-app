@@ -13,13 +13,18 @@ export default (env: Env) => {
     mode: env.mode ?? "development",
     entry: "./src/index.tsx",
     output: {
-      filename: "[name].js",
+      filename: "[name].[contenthash].js",
+      chunkFilename: "[name].[contenthash].js",
       path: path.resolve(__dirname, "build"),
       clean: true,
       publicPath: "/",
     },
     optimization: {
       runtimeChunk: "multiple",
+      splitChunks: {
+        chunks: "all",
+        maxInitialRequests: 10,
+      },
     },
     devtool: isDev && "inline-source-map",
     module: {

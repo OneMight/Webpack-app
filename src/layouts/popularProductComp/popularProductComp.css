@@ -34,3 +34,9 @@
   gap: 30px;
   flex-wrap: wrap;
 }
+
+@media screen and (max-width: 500px) {
+  .main-page_title {
+    font-size: 28px;
+  }
+}

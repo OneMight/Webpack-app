@@ -34,3 +34,36 @@
     transition: all 0.3s;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .images-view {
+    flex-direction: column-reverse;
+    width: 97%;
+  }
+  .selected {
+    min-width: 300px;
+  }
+  .images-select {
+    flex-direction: row;
+  }
+  .image-cart {
+    max-width: 100px;
+  }
+  .small-image {
+    max-width: 100px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .image-cart {
+    max-width: 70px;
+  }
+  .small-image {
+    max-width: 70px;
+  }
+  .product-card-price {
+    flex-direction: column;
+  }
+  .review-user {
+    width: 90%;
+  }
+}

@@ -67,3 +67,8 @@
     cursor: pointer;
   }
 }
+@media screen and (max-width: 500px) {
+  .email-subscription {
+    width: 280px;
+  }
+}

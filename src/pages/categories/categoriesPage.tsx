@@ -24,6 +24,7 @@ export default function CategoriesPage() {
   const [selectedFilter, setSelectedFilter] = useState<string>("");
   const [search, setSearch] = useState<string>("");
   const [debouncedSearch, setDebouncedSearch] = useState<string>("");
+  const [openFilters, setOpenFilters] = useState<boolean>(false);
   const {
     data,
     isLoading: isLoadingProducts,
@@ -83,13 +84,23 @@ export default function CategoriesPage() {
         <SortingSection
           name="Filters"
           filters={categories}
+          openedFilters={openFilters}
           func={handleSetArrayFilters}
           selectedFilter={selectedFilter}
         />
       </div>
       <section className="main-div">
         <div className="main-title">
-          <h2 className="main-text__title">Our Collection Of Products</h2>
+          <div className="main-filter-open">
+            <h2 className="main-text__title">Our Collection Of Products</h2>
+            <button
+              className="open-filters"
+              onClick={() => setOpenFilters(!openFilters)}
+            >
+              {openFilters ? "Close" : "Open"} filters
+            </button>
+          </div>
+
           <Input
             name="search"
             placeholder="Search An Item"
@@ -99,7 +110,7 @@ export default function CategoriesPage() {
               setSearch(e.target.value)
             }
             styles={{
-              width: "98%",
+              width: "85%",
               backgroundColor: "#fff",
               border: "1px solid gray",
               borderRadius: "30px",
