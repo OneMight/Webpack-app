@@ -2,11 +2,11 @@
   "compilerOptions": {
     "outDir": "./build/",
     "noImplicitAny": true,
-    "module": "Node16",
+    "module": "esnext",
     "target": "es5",
     "jsx": "react-jsx",
     "allowJs": true,
-    "moduleResolution": "node16",
+    "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   },

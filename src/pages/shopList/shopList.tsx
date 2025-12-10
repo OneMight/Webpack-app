@@ -2,7 +2,7 @@ import "./shopList.css";
 import { PaymentDiv } from "../../components";
 import { useAppSelector } from "../../app/hooks";
 import { ProductBasket } from "../../components";
-export function ShopList() {
+export default function ShopList() {
   const product = useAppSelector((state) => state.userProduct.product);
   const totalSum = useAppSelector((state) => state.userProduct.subtotal);
 

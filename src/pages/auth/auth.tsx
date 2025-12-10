@@ -85,6 +85,7 @@ export default function Auth() {
         <div className="img">
           <img
             className="image"
+            loading="lazy"
             src="/images/registration-img.jpg"
             alt="auth-image"
           />
