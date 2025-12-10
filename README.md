@@ -2,6 +2,7 @@
 # [Figma](https://www.figma.com/design/glo0wEa95C1QaexCf7AqUq/Multipurpose-Ecommerce-Website-Lo-fi-Template--Community---Copy-?node-id=0-1&p=f&t=pS8XsSOHHkAWnA1b-0)
 
 This application realize [dummyjsonApi](https://dummyjson.com/) witch provide different url for a different needs
+To login in app use [prepared users](https://dummyjson.com/users)
 # Functionality
 1. Authorization
 2. Registration
