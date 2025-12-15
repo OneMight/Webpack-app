@@ -5,7 +5,7 @@ import StatisticOnMain from "./statisticOnMain/statisticOnMain";
 import ViewProductDetails from "./viewProductDetails/viewProductDetails";
 import ImagesView from "./imagesView/imagesView";
 import ModalUI from "./modalUI/modalUI";
-import PositionedMenu from "./burger/burger";
+import PositionedMenu from "../components/burger/burger";
 export {
   Footer,
   Header,

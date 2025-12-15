@@ -9,7 +9,7 @@ import type { User } from "../../types/types";
 import { useGetTokenMutation } from "../../api/userApi";
 import { AlertMui } from "../../components";
 export default function Auth() {
-  const [loginFunc, { isLoading }] = useGetTokenMutation();
+  const [loginFunc] = useGetTokenMutation();
   const [error, setError] = useState<string>(null);
   const [user, setUser] = useState<User>({
     username: "",
@@ -18,14 +18,10 @@ export default function Auth() {
   const navigate = useNavigate();
   const handleGetToken = async () => {
     try {
-      if (user.password != "" || user.username != "") {
-        const response = await loginFunc(user).unwrap();
-        if (!isLoading) {
-          document.cookie = `accessToken=${response.accessToken}`;
-          document.cookie = `refreshToken=${response.refreshToken}`;
-        }
-        navigate(ROUTES.HOME);
-      }
+      const response = await loginFunc(user).unwrap();
+      document.cookie = `accessToken=${response.accessToken}`;
+      document.cookie = `refreshToken=${response.refreshToken}`;
+      navigate(ROUTES.HOME);
     } catch (error) {
       setError(error.data.message);
       return;
@@ -33,6 +29,12 @@ export default function Auth() {
   };
   const handlePreventDefault = (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
+  };
+  const handleSetUserPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUser((prev) => ({ ...prev, password: e.target.value }));
+  };
+  const handleSetUsername = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUser((prev) => ({ ...prev, username: e.target.value }));
   };
   return (
     <main className="auth-page">
@@ -55,9 +57,7 @@ export default function Auth() {
               name="username"
               placeholder="Enter username"
               type="text"
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setUser((prev) => ({ ...prev, username: e.target.value }))
-              }
+              onChange={handleSetUsername}
               width="95%"
             />
             <FormInput
@@ -65,17 +65,15 @@ export default function Auth() {
               name="password"
               placeholder="Enter password"
               type="password"
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setUser((prev) => ({ ...prev, password: e.target.value }))
-              }
+              onChange={handleSetUserPassword}
               width="95%"
             />
             <Button
               width="100%"
               padding="10px 0"
-              borderradius="30px"
+              borderRadius="30px"
               fontSize="20px"
-              textcolor="#fff"
+              textColor="#fff"
               onClick={handleGetToken}
             >
               Login

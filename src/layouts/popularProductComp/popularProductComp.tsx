@@ -30,8 +30,8 @@ const PopularProductComp = () => {
         </div>
         <Button
           padding="5px 5px"
-          textcolor="#fff"
-          borderradius="20px"
+          textColor="#fff"
+          borderRadius="20px"
           fontSize="16px"
           width="120px"
           onClick={handleDirectToShop}

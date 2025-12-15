@@ -58,18 +58,18 @@ const Header = () => {
             onClick={() => handleNavigate(ROUTES.REGISTER)}
             width="120px"
             padding="5px 5px"
-            borderradius="20px"
+            borderRadius="20px"
             fontSize="16px"
-            textcolor={"#fff"}
+            textColor={"#fff"}
           />
           <Button
             children="Login"
             onClick={() => handleNavigate(ROUTES.LOGIN)}
             width="120px"
             padding="5px 5px"
-            borderradius="20px"
+            borderRadius="20px"
             fontSize="16px"
-            textcolor={"#fff"}
+            textColor={"#fff"}
           />
         </div>
       ) : (

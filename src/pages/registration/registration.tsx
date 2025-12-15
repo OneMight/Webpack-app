@@ -103,9 +103,9 @@ export default function Registration() {
             <Button
               width="100%"
               padding="10px 0"
-              borderradius="30px"
+              borderRadius="30px"
               fontSize="20px"
-              textcolor="#fff"
+              textColor="#fff"
               disabled={!checkPolicy}
               onClick={handleRegister}
             >

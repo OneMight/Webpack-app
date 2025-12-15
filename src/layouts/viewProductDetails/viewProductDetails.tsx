@@ -42,24 +42,24 @@ export const ViewProductDetails = memo(({ product }: ViewDetail) => {
         <div className="product-card-controll-panel">
           <div className="product-card-add-to-cart">
             <Button
-              borderradius="20px"
+              borderRadius="20px"
               fontSize="18px"
               width="100%"
-              backgroundcolor="#000"
+              backgroundColor="#000"
               padding="5px 0"
-              textcolor="#fff"
+              textColor="#fff"
               children="Add to Cart"
               onClick={handleAddToBasket}
             />
           </div>
           <Button
-            borderradius="20px"
+            borderRadius="20px"
             fontSize="18px"
             width="100%"
-            backgroundcolor="#fff"
+            backgroundColor="#fff"
             padding="5px 0"
             borderColor="#000"
-            textcolor="#000"
+            textColor="#000"
             children="Buy now"
           />
         </div>
