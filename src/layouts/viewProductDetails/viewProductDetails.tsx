@@ -2,11 +2,11 @@ import "./viewProductDetails.css";
 import { AlertMui, Button } from "../../components";
 import Rating from "@mui/material/Rating";
 import { ImagesView } from "../index";
-import { IViewDetail } from "../../types/intefaces";
+import { ViewDetail } from "../../interfaces/product";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { setProducts, clearError } from "../../store/userProductSlice";
 import { memo } from "react";
-export const ViewProductDetails = memo(({ product }: IViewDetail) => {
+export const ViewProductDetails = memo(({ product }: ViewDetail) => {
   const error = useAppSelector((state) => state.userProduct.error);
   const dispatch = useAppDispatch();
   const handleAddToBasket = () => {

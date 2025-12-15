@@ -1,8 +1,8 @@
-import { IReview } from "../../types/intefaces";
+import { Review } from "../../interfaces/product";
 import "./review.css";
 import { Rating } from "@mui/material";
 import { convertDate } from "../../utils/timeConvert";
-export default function Review({ review }: IReview) {
+export default function Review({ review }: Review) {
   return (
     <article className="review-user">
       <div className="review-rate">

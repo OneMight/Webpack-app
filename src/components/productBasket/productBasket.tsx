@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./productBasket.css";
 import { useAppDispatch } from "../../app/hooks";
-import { ProductCard } from "../../types/intefaces";
+import { ProductCard } from "../../interfaces/intefaces";
 import { ControllPanelCard } from "../index";
 import {
   deleteProduct,

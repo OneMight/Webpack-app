@@ -1,4 +1,4 @@
-import { formInput } from "../../../types/intefaces";
+import { formInput } from "../../../interfaces/input";
 import Input from "../baseInput/input";
 export default function FormInput({
   label,

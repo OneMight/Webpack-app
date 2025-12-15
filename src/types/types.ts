@@ -17,3 +17,8 @@ export type InputProductApi = {
   filter?: string;
   search?: string;
 };
+export type BaseUser = {
+  name: string;
+  email: string;
+  password: string;
+};

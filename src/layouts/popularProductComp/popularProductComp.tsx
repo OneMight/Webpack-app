@@ -4,7 +4,7 @@ import { useGetProductsQuery } from "../../api/productApi";
 import Card from "../../components/card/card";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
-import { Product } from "../../types/intefaces";
+import { Product } from "../../interfaces/intefaces";
 import { useState } from "react";
 import { AlertMui } from "../../components";
 const PopularProductComp = () => {

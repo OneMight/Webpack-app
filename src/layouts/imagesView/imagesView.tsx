@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ProductCard } from "../../types/intefaces";
+import { ProductCard } from "../../interfaces/intefaces";
 import "./imagesView.css";
 export default function ImagesView({ thing }: ProductCard) {
   const [selected, setSelected] = useState<number>(0);

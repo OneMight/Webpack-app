@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
-import { IBurger } from "../../types/intefaces";
 import "./burger.css";
+interface Burger {
+  opened: boolean;
+  setOpened: (value: boolean) => void;
+  isLogged: boolean;
+  setOpenModal: () => void;
+}
 export default function PositionedMenu({
   opened,
   setOpened,
   setOpenModal,
   isLogged,
-}: IBurger) {
+}: Burger) {
   return (
     <>
       <button

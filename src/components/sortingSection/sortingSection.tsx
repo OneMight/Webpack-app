@@ -1,5 +1,14 @@
-import { ISortingSection } from "../../types/intefaces";
+import type { FiltersArray } from "../../types/types";
 import "./sortingSection.css";
+
+interface ISortingSection {
+  name: string;
+  filters: FiltersArray[];
+  func: (name: string) => void;
+  selectedFilter: string;
+  openedFilters: boolean;
+}
+
 export default function SortingSection({
   name,
   filters,

@@ -11,7 +11,7 @@ import {
   useGetCategoriesQuery,
   useGetProductsQuery,
 } from "../../api/productApi";
-import { Product } from "../../types/intefaces";
+import { Product } from "../../interfaces/product";
 
 export default function CategoriesPage() {
   const {

@@ -1,5 +1,5 @@
 import "./input.css";
-import { BaseInput } from "../../../types/intefaces";
+import { BaseInput } from "../../../interfaces/intefaces";
 export default function Input({
   name,
   placeholder,

@@ -4,7 +4,7 @@ import { ROUTES } from "../../utils/routes";
 import { Link } from "react-router-dom";
 import FormInput from "../../components/inputs/formInput/formInput";
 import Button from "../../components/button/button";
-import { IBaseUser } from "../../types/intefaces";
+import type { BaseUser } from "../../types/types";
 import { usePostUserMutation } from "../../api/userApi";
 import { AlertMui } from "../../components/alert/alert";
 export default function Registration() {
@@ -12,7 +12,7 @@ export default function Registration() {
     e.preventDefault();
   };
   const [error, setError] = useState<string | null>(null);
-  const [newUser, setNewUser] = useState<IBaseUser>({
+  const [newUser, setNewUser] = useState<BaseUser>({
     name: "",
     email: "",
     password: "",

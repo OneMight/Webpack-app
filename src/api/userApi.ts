@@ -1,12 +1,16 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IBaseUser, IRegisterApi } from "../types/intefaces";
+import type { BaseUser } from "../types/types";
 import { User, UserToken } from "../types/types";
+
+interface IRegisterApi {
+  newUser: BaseUser;
+}
 
 export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: fetchBaseQuery({ baseUrl: "https://dummyjson.com/" }),
   endpoints: (builder) => ({
-    postUser: builder.mutation<IRegisterApi, IBaseUser>({
+    postUser: builder.mutation<IRegisterApi, BaseUser>({
       query: (newUser) => ({
         url: "users/add",
         headers: { "Content-Type": "application/json" },
