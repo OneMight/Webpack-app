@@ -1,7 +1,17 @@
-import { IReview } from "../../types/intefaces";
 import "./review.css";
 import { Rating } from "@mui/material";
 import { convertDate } from "../../utils/timeConvert";
+export interface IReviewProduct {
+  id: number;
+  comment: string;
+  date: string;
+  reviewerName: string;
+  reviewerEmail: string;
+  rating: number;
+}
+interface IReview {
+  review: IReviewProduct;
+}
 export default function Review({ review }: IReview) {
   return (
     <article className="review-user">

@@ -4,8 +4,7 @@ import { ROUTES } from "../../utils/routes";
 import { Link } from "react-router-dom";
 import FormInput from "../../components/inputs/formInput/formInput";
 import Button from "../../components/button/button";
-import { IBaseUser } from "../../types/intefaces";
-import { usePostUserMutation } from "../../api/userApi";
+import { usePostUserMutation, IBaseUser } from "../../api/userApi";
 import { AlertMui } from "../../components/alert/alert";
 export default function Registration() {
   const handlePreventDefault = (e: React.FormEvent<HTMLElement>) => {

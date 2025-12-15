@@ -5,7 +5,7 @@ import FormInput from "../../components/inputs/formInput/formInput";
 import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
 import { useState } from "react";
-import type { User } from "../../types/types";
+import type { User } from "../../api/userApi";
 import { useGetTokenMutation } from "../../api/userApi";
 import { AlertMui } from "../../components";
 export default function Auth() {

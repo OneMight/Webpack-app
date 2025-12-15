@@ -1,6 +1,17 @@
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
-import { ButtonInterface } from "../../types/intefaces";
+export interface ButtonInterface {
+  backgroundcolor?: string;
+  borderColor?: string;
+  padding: string;
+  borderradius: string;
+  fontSize: string;
+  width: string;
+  textcolor: string;
+  children?: string;
+  disabled?: boolean;
+  func?: () => void;
+}
 const ColorButton = styled(Button)(
   ({
     backgroundcolor,

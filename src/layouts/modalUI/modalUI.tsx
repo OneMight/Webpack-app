@@ -1,7 +1,6 @@
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
-import { IModalUI } from "../../types/intefaces";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
 
@@ -20,6 +19,10 @@ const style = {
   px: 2,
   pb: 2,
 };
+interface IModalUI {
+  open: boolean;
+  setOpen: (value?: boolean) => void;
+}
 
 export default function ModalUI({ setOpen, open }: IModalUI) {
   const navigate = useNavigate();

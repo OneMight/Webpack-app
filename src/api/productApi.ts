@@ -1,6 +1,39 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import type { IDetailsProduct, ProductResponse } from "../types/intefaces";
-import { FiltersArray, InputProductApi } from "../types/types";
+import { IReviewProduct } from "../components/review/review";
+import type { Product } from "../types/intefaces";
+
+interface IDimensionsProduct {
+  width: number;
+  height: number;
+  depth: number;
+}
+type InputProductApi = {
+  limit: number;
+  skip: number;
+  filter?: string;
+  search?: string;
+};
+
+interface ProductResponse {
+  products: Product[];
+  total: number;
+}
+
+export type FiltersArray = {
+  id: number;
+  elem: string;
+};
+export interface IDetailsProduct extends Product {
+  description: string;
+  rating: number;
+  category: string;
+  brand: string;
+  weight: number;
+  dimensions: IDimensionsProduct;
+  shippingInformation: string;
+  returnPolicy: string;
+  reviews: IReviewProduct[];
+}
 
 export const productsApi = createApi({
   reducerPath: "productsApi",

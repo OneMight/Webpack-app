@@ -1,5 +1,10 @@
 import "./input.css";
-import { BaseInput } from "../../../types/intefaces";
+import { IInput } from "../../../types/intefaces";
+interface BaseInput extends IInput {
+  styles: object;
+  requared?: boolean;
+  value?: string;
+}
 export default function Input({
   name,
   placeholder,

@@ -1,5 +1,8 @@
 import "./paymentDiv.css";
-import { IPaymentDiv } from "../../types/intefaces";
+interface IPaymentDiv {
+  title: string;
+  sum: number | string;
+}
 export default function PaymentDiv({ title, sum }: IPaymentDiv) {
   return (
     <div className="payment-div">

@@ -1,7 +1,21 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IBaseUser, IRegisterApi } from "../types/intefaces";
-import { User, UserToken } from "../types/types";
-
+export interface IBaseUser {
+  name: string;
+  email: string;
+  password: string;
+}
+export interface IRegisterApi {
+  newUser: IBaseUser;
+}
+type UserToken = {
+  accessToken: string;
+  refreshToken: string;
+  message: string;
+};
+export type User = {
+  username: string;
+  password: string;
+};
 export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: fetchBaseQuery({ baseUrl: "https://dummyjson.com/" }),

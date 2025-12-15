@@ -1,5 +1,9 @@
-import { IControllPanel } from "../../types/intefaces";
 import "./ControllPanelCard.css";
+interface IControllPanel {
+  count: number;
+  minus: () => void;
+  plus: () => void;
+}
 export default function ControllPanelCard({
   count,
   minus,

@@ -1,7 +1,11 @@
-import { IAlert } from "../../types/intefaces";
 import { Alert, Box, IconButton, Collapse } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { useEffect, useState } from "react";
+export interface IAlert {
+  children: string;
+  setError: (error: string | null) => void;
+}
+
 export const AlertMui = ({ children, setError }: IAlert) => {
   const [open, setOpen] = useState<boolean>(true);
 
