@@ -18,8 +18,6 @@ const PopularProductComp = () => {
   if (isLoading || error) {
     return <p>Loading....</p>;
   }
-  const productList = data.products;
-
   return (
     <section className="main-page_section">
       {addError && <AlertMui setError={setError}>{addError}</AlertMui>}
@@ -39,7 +37,7 @@ const PopularProductComp = () => {
         />
       </div>
       <div className="main-page_card-container">
-        {productList.map((product: Product) => {
+        {data.products.map((product: Product) => {
           return <Card key={product.id} setError={setError} thing={product} />;
         })}
       </div>

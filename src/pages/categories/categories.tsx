@@ -122,7 +122,7 @@ export default function CategoriesPage() {
           </p>
         </div>
         <section className="main-data">
-          {data.products.length !== 0 ? (
+          {data.products?.length !== 0 ? (
             data.products.map((elem: Product) => (
               <Card thing={elem} setError={setErrorLog} key={elem.id} />
             ))

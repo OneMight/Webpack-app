@@ -31,6 +31,21 @@ export default function Registration() {
     }
     adduser(newUser);
   };
+  const handleSetNewUsername = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNewUser((prev) => ({ ...prev, name: e.target.value }));
+  };
+  const handleSetNewUserEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNewUser((prev) => ({ ...prev, email: e.target.value }));
+  };
+  const handleSetNewUserPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNewUser((prev) => ({ ...prev, password: e.target.value }));
+  };
+  const handleSetConfirmPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setcPassword(e.target.value);
+  };
+  const handleSetCheckPolicy = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCheckPolicy(e.target.checked);
+  };
   return (
     <main className="registration-page">
       {error && <AlertMui setError={setError}>{error}</AlertMui>}
@@ -55,18 +70,14 @@ export default function Registration() {
                 name="Username"
                 placeholder="Enter username"
                 type="text"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setNewUser((prev) => ({ ...prev, name: e.target.value }))
-                }
+                onChange={handleSetNewUsername}
               />
               <FormInput
                 label="Email"
                 name="email"
                 placeholder="Enter email"
                 type="text"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setNewUser((prev) => ({ ...prev, email: e.target.value }))
-                }
+                onChange={handleSetNewUserEmail}
               />
             </div>
             <div className="registration-inputs">
@@ -75,18 +86,14 @@ export default function Registration() {
                 name="password"
                 placeholder="Enter password"
                 type="password"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setNewUser((prev) => ({ ...prev, password: e.target.value }))
-                }
+                onChange={handleSetNewUserPassword}
               />
               <FormInput
                 label="Confirm Password"
                 name="c-password"
                 placeholder="Confirm password"
                 type="password"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setcPassword(e.target.value)
-                }
+                onChange={handleSetConfirmPassword}
               />
             </div>
             <label className="registration-terms">
@@ -94,9 +101,7 @@ export default function Registration() {
                 type="checkbox"
                 required
                 checked={checkPolicy}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setCheckPolicy(e.target.checked)
-                }
+                onChange={handleSetCheckPolicy}
               />
               I have read and agreed to the Terms of Service and Privacy Policy
             </label>
