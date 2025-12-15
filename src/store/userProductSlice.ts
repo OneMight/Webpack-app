@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { Product } from "../interfaces/intefaces";
+import type { Product } from "../interfaces/product";
 interface Products {
   product: Product[];
   subtotal: number;

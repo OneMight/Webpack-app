@@ -26,7 +26,7 @@
 .product-card-title {
   font-family: var(--Oxygen);
   font-size: 26px;
-  color: var(--TotalBlack);
+  color: var(--total-black);
 }
 .product-card-price {
   display: flex;

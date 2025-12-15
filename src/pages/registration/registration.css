@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: center;
   width: 80%;
-  border: 1px solid var(--TotalBlack);
+  border: 1px solid var(--total-black);
   border-radius: 20px;
   margin: 30px 0;
 }
@@ -30,13 +30,13 @@
 
 .registration-title {
   font-size: 36px;
-  color: var(--TotalBlack);
+  color: var(--total-black);
 }
 .redirect {
-  color: var(--HoverButtonGray);
+  color: var(--hover-button-gray);
 }
 .registration-login {
-  color: var(--TotalBlack);
+  color: var(--total-black);
 }
 .redirect,
 .registration-login {

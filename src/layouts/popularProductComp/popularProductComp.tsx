@@ -4,7 +4,7 @@ import { useGetProductsQuery } from "../../api/productApi";
 import Card from "../../components/card/card";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
-import { Product } from "../../interfaces/intefaces";
+import { Product } from "../../interfaces/product";
 import { useState } from "react";
 import { AlertMui } from "../../components";
 const PopularProductComp = () => {
@@ -34,7 +34,7 @@ const PopularProductComp = () => {
           borderradius="20px"
           fontSize="16px"
           width="120px"
-          func={handleDirectToShop}
+          onClick={handleDirectToShop}
           children="View All"
         />
       </div>

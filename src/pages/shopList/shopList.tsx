@@ -20,7 +20,7 @@ export default function ShopList() {
               </article>
             </div>
             <section className="main-product__things">
-              {product?.map((elem) => {
+              {product.map((elem) => {
                 return <ProductBasket thing={elem} key={elem.id} />;
               })}
             </section>

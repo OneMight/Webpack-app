@@ -12,8 +12,8 @@
   flex-direction: column;
   gap: 10px;
   align-items: center;
-  background-color: var(--White);
-  border: 1px solid var(--TotalBlack);
+  background-color: var(--white);
+  border: 1px solid var(--total-black);
   width: 100px;
   transform: translate(0);
   right: 0;
@@ -25,7 +25,7 @@
   font-size: 18px;
   font-family: var(--Oxygen);
   text-decoration: none;
-  color: var(--TotalBlack);
+  color: var(--total-black);
 }
 .burger-menu-logout {
   background: transparent;

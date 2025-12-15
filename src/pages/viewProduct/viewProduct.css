@@ -17,12 +17,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--BackgroundReviews);
+  background-color: var(--background-reviews);
   padding: 40px 0;
 }
 .review-section__title {
   font-size: 26px;
-  color: var(--TotalBlack);
+  color: var(--total-black);
 }
 .review-section {
   width: 95%;

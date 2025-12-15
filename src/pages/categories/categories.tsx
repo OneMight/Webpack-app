@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./categoriesPage.css";
+import "./categories.css";
 import {
   Card,
   SortingSection,
@@ -52,7 +52,7 @@ export default function CategoriesPage() {
     setLimit((prev) => {
       if (data.total < prev) return data.total;
       else {
-        return prev < data.total && data.total > 6 ? 12 : data.total;
+        return prev < data.total && data.total > 12 ? 12 : data.total;
       }
     });
   }, [data?.total]);
@@ -85,7 +85,7 @@ export default function CategoriesPage() {
           name="Filters"
           filters={categories}
           openedFilters={openFilters}
-          func={handleSetArrayFilters}
+          onChange={handleSetArrayFilters}
           selectedFilter={selectedFilter}
         />
       </div>
@@ -95,7 +95,7 @@ export default function CategoriesPage() {
             <h2 className="main-text__title">Our Collection Of Products</h2>
             <button
               className="open-filters"
-              onClick={() => setOpenFilters(!openFilters)}
+              onClick={() => setOpenFilters((prev) => !prev)}
             >
               {openFilters ? "Close" : "Open"} filters
             </button>
@@ -106,7 +106,7 @@ export default function CategoriesPage() {
             placeholder="Search An Item"
             type="text"
             value={search}
-            func={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setSearch(e.target.value)
             }
             styles={{
@@ -122,9 +122,13 @@ export default function CategoriesPage() {
           </p>
         </div>
         <section className="main-data">
-          {data.products.map((elem: Product) => (
-            <Card thing={elem} setError={setErrorLog} key={elem.id} />
-          ))}
+          {data.products.length !== 0 ? (
+            data.products.map((elem: Product) => (
+              <Card thing={elem} setError={setErrorLog} key={elem.id} />
+            ))
+          ) : (
+            <p>No products found</p>
+          )}
         </section>
         <Button
           textcolor="#fff"
@@ -133,7 +137,7 @@ export default function CategoriesPage() {
           padding="10px"
           fontSize="20px"
           disabled={limit === data.total}
-          func={handleLoadMore}
+          onClick={handleLoadMore}
         >
           Load More
         </Button>

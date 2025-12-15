@@ -4,14 +4,14 @@ import "./sortingSection.css";
 interface ISortingSection {
   name: string;
   filters: FiltersArray[];
-  func: (name: string) => void;
+  onChange: (name: string) => void;
   selectedFilter: string;
   openedFilters: boolean;
 }
 export default function SortingSection({
   name,
   filters,
-  func,
+  onChange,
   openedFilters,
   selectedFilter,
 }: ISortingSection) {
@@ -25,7 +25,7 @@ export default function SortingSection({
             className="disable-all"
             checked={selectedFilter === ""}
             name="disable-all"
-            onChange={() => func("")}
+            onChange={() => onChange("")}
           />
           <p className="filter-name">reset filters</p>
         </label>
@@ -36,7 +36,7 @@ export default function SortingSection({
                 type="radio"
                 name={String(elem)}
                 checked={selectedFilter === String(elem)}
-                onChange={() => func(String(elem))}
+                onChange={() => onChange(String(elem))}
                 className="filter-checkbox"
               />
               <p className="filter-name">{String(elem)}</p>

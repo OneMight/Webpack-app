@@ -28,7 +28,7 @@
 .header_nav > a {
   font-family: var(--Oxygen);
   text-decoration: none;
-  color: var(--TotalBlack);
+  color: var(--total-black);
 }
 
 .header-log-buttons {
@@ -39,8 +39,8 @@
   justify-content: center;
 }
 .header_button {
-  color: var(--White);
-  background-color: var(--TotalBlack);
+  color: var(--white);
+  background-color: var(--total-black);
 }
 .menu {
   background-color: transparent;
@@ -87,7 +87,7 @@
 
 @media (any-hover: hover) {
   .header_nav > a:hover {
-    color: var(--HoverButtonGray);
+    color: var(--hover-button-gray);
     transition: color 0.3s;
   }
 }

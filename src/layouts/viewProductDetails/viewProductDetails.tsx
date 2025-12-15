@@ -49,7 +49,7 @@ export const ViewProductDetails = memo(({ product }: ViewDetail) => {
               padding="5px 0"
               textcolor="#fff"
               children="Add to Cart"
-              func={handleAddToBasket}
+              onClick={handleAddToBasket}
             />
           </div>
           <Button
@@ -61,7 +61,6 @@ export const ViewProductDetails = memo(({ product }: ViewDetail) => {
             borderColor="#000"
             textcolor="#000"
             children="Buy now"
-            func={() => {}}
           />
         </div>
         <div>

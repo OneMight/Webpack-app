@@ -6,11 +6,11 @@
   flex-direction: column;
   border: 1px solid rgb(119, 119, 119);
   padding: 20px;
-  background-color: var(--White);
+  background-color: var(--white);
 }
 .filters-title {
   font-size: 1.25rem;
-  color: var(--BackgroundBlack);
+  color: var(--background-black);
 }
 .filter {
   width: 100%;
@@ -21,7 +21,7 @@
   gap: 20px;
 }
 .filter-name {
-  color: var(--BackgroundBlack);
+  color: var(--background-black);
   margin: 0;
 }
 .filters-display {

@@ -5,7 +5,7 @@ import FormInput from "../../components/inputs/formInput/formInput";
 import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
 import { useState } from "react";
-import type { User } from "../../api/userApi";
+import type { User } from "../../types/types";
 import { useGetTokenMutation } from "../../api/userApi";
 import { AlertMui } from "../../components";
 export default function Auth() {
@@ -55,7 +55,7 @@ export default function Auth() {
               name="username"
               placeholder="Enter username"
               type="text"
-              func={(e: React.ChangeEvent<HTMLInputElement>) =>
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setUser((prev) => ({ ...prev, username: e.target.value }))
               }
               width="95%"
@@ -65,7 +65,7 @@ export default function Auth() {
               name="password"
               placeholder="Enter password"
               type="password"
-              func={(e: React.ChangeEvent<HTMLInputElement>) =>
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setUser((prev) => ({ ...prev, password: e.target.value }))
               }
               width="95%"
@@ -76,7 +76,7 @@ export default function Auth() {
               borderradius="30px"
               fontSize="20px"
               textcolor="#fff"
-              func={() => handleGetToken()}
+              onClick={handleGetToken}
             >
               Login
             </Button>

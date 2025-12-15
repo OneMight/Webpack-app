@@ -4,7 +4,7 @@
   align-items: start;
   justify-content: center;
   width: 70%;
-  border: 1px solid var(--BorderReview);
+  border: 1px solid var(--border-review);
   padding: 10px;
   border-radius: 20px;
 }

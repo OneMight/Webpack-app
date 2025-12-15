@@ -1,17 +1,13 @@
-import { formInput } from "../../../interfaces/input";
+import { FormInput } from "../../../interfaces/input";
 import Input from "../baseInput/input";
-export interface formInput extends IInput {
-  label: string;
-  width?: string;
-}
 export default function FormInput({
   label,
   name,
   placeholder,
   type,
   width,
-  func,
-}: formInput) {
+  onChange,
+}: FormInput) {
   return (
     <label>
       {label}
@@ -20,7 +16,7 @@ export default function FormInput({
         placeholder={placeholder}
         type={type}
         requared
-        func={func}
+        onChange={onChange}
         styles={{
           width: width ?? "90%",
           backgroundColor: "#fff",

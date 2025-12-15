@@ -3,7 +3,7 @@ export interface BaseInput extends Input {
   requared?: boolean;
   value?: string;
 }
-export interface formInput extends Input {
+export interface FormInput extends Input {
   label: string;
   width?: string;
 }
@@ -12,5 +12,5 @@ export interface Input {
   name: string;
   placeholder: string;
   type: string;
-  func?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }

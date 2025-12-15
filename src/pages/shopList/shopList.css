@@ -34,7 +34,7 @@
 }
 .main-product__table-text {
   font-size: 22px;
-  color: var(--White);
+  color: var(--white);
 }
 .main-product__header-table {
   display: flex;

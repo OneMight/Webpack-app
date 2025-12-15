@@ -10,7 +10,7 @@ interface ButtonInterface {
   textcolor: string;
   children?: string;
   disabled?: boolean;
-  func?: () => void;
+  onClick?: () => void;
 }
 const ColorButton = styled(Button)(
   ({
@@ -42,7 +42,7 @@ export default function CustomizedButtons(props: ButtonInterface) {
     fontSize,
     padding,
     disabled,
-    func,
+    onClick,
     width,
     backgroundcolor,
   } = props;
@@ -54,7 +54,7 @@ export default function CustomizedButtons(props: ButtonInterface) {
       textcolor={textcolor}
       fontSize={fontSize}
       padding={padding}
-      onClick={() => func()}
+      onClick={onClick}
       width={width}
       disabled={disabled}
     >

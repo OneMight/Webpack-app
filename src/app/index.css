@@ -10,13 +10,13 @@
   color: black;
   min-height: 100vh;
   position: relative;
-  --White: #ffffff;
-  --BackgroundBlack: #282828;
-  --HoverButtonBlack: #4b4b4b;
-  --TotalBlack: #000000;
-  --HoverButtonGray: #c7c7c7;
-  --BackgroundReviews: #f8f8f8;
-  --BorderReview: #d3d3d3;
+  --white: #ffffff;
+  --background-black: #282828;
+  --hover-button-black: #4b4b4b;
+  --total-black: #000000;
+  --hover-button-gray: #c7c7c7;
+  --background-reviews: #f8f8f8;
+  --border-review: #d3d3d3;
 }
 body {
   margin: 0;

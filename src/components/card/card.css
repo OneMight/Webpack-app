@@ -13,7 +13,7 @@
   font-size: 22px;
   margin: 0;
   text-decoration: none;
-  color: var(--TotalBlack);
+  color: var(--total-black);
   transition: all 0.3s;
 }
 .card-price {
@@ -28,7 +28,7 @@
   justify-content: space-between;
 }
 .card-button {
-  border: 1px solid var(--TotalBlack);
+  border: 1px solid var(--total-black);
   padding: 3px;
   font-size: 14px;
   border-radius: 60px;
@@ -44,6 +44,6 @@
     transition: all 0.3s;
   }
   .card-title:hover {
-    color: var(--HoverButtonGray);
+    color: var(--hover-button-gray);
   }
 }

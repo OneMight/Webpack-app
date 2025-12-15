@@ -24,7 +24,7 @@
   gap: 20px;
 }
 .main-text__title {
-  color: var(--TotalBlack);
+  color: var(--total-black);
 }
 .main-subtitle {
   margin: 0;
@@ -76,6 +76,9 @@
     width: 100%;
     gap: 5px;
     padding: 20px 0;
+  }
+  .main-title {
+    width: 90%;
   }
   .main-text__title {
     font-size: 18px;

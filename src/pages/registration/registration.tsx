@@ -55,7 +55,7 @@ export default function Registration() {
                 name="Username"
                 placeholder="Enter username"
                 type="text"
-                func={(e: React.ChangeEvent<HTMLInputElement>) =>
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setNewUser((prev) => ({ ...prev, name: e.target.value }))
                 }
               />
@@ -64,7 +64,7 @@ export default function Registration() {
                 name="email"
                 placeholder="Enter email"
                 type="text"
-                func={(e: React.ChangeEvent<HTMLInputElement>) =>
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setNewUser((prev) => ({ ...prev, email: e.target.value }))
                 }
               />
@@ -75,7 +75,7 @@ export default function Registration() {
                 name="password"
                 placeholder="Enter password"
                 type="password"
-                func={(e: React.ChangeEvent<HTMLInputElement>) =>
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setNewUser((prev) => ({ ...prev, password: e.target.value }))
                 }
               />
@@ -84,7 +84,7 @@ export default function Registration() {
                 name="c-password"
                 placeholder="Confirm password"
                 type="password"
-                func={(e: React.ChangeEvent<HTMLInputElement>) =>
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setcPassword(e.target.value)
                 }
               />
@@ -107,7 +107,7 @@ export default function Registration() {
               fontSize="20px"
               textcolor="#fff"
               disabled={!checkPolicy}
-              func={() => handleRegister()}
+              onClick={handleRegister}
             >
               Create Account
             </Button>

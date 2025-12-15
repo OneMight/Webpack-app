@@ -16,7 +16,6 @@ const StatisticOnMain = () => {
             fontSize="20px"
             padding="5px 10px"
             width="150px"
-            func={() => {}}
           />
         </div>
         <div className="statistic-desc">

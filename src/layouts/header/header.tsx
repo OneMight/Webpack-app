@@ -55,7 +55,7 @@ const Header = () => {
         <div className="header-log-buttons">
           <Button
             children="Registration"
-            func={() => handleNavigate(ROUTES.REGISTER)}
+            onClick={() => handleNavigate(ROUTES.REGISTER)}
             width="120px"
             padding="5px 5px"
             borderradius="20px"
@@ -64,7 +64,7 @@ const Header = () => {
           />
           <Button
             children="Login"
-            func={() => handleNavigate(ROUTES.LOGIN)}
+            onClick={() => handleNavigate(ROUTES.LOGIN)}
             width="120px"
             padding="5px 5px"
             borderradius="20px"

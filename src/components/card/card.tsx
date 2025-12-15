@@ -1,4 +1,4 @@
-import { ProductCard } from "../../interfaces/intefaces";
+import { ProductCard } from "../../interfaces/product";
 import "./card.css";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { setProducts, addTotalSum } from "../../store/userProductSlice";

@@ -1,6 +1,6 @@
 import PopularProductComp from "../../layouts/popularProductComp/popularProductComp";
 import StatisticOnMain from "../../layouts/statisticOnMain/statisticOnMain";
-import "./homePage.css";
+import "./home.css";
 export default function HomePage() {
   return (
     <main className="home-page">
