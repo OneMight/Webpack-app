@@ -5,7 +5,6 @@ interface ControllPanel {
   minus: () => void;
   plus: () => void;
 }
-
 export default function ControllPanelCard({
   count,
   minus,

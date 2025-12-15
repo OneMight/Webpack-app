@@ -1,5 +1,9 @@
 import { formInput } from "../../../interfaces/input";
 import Input from "../baseInput/input";
+export interface formInput extends IInput {
+  label: string;
+  width?: string;
+}
 export default function FormInput({
   label,
   name,

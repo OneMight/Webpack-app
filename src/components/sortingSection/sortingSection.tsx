@@ -8,7 +8,6 @@ interface ISortingSection {
   selectedFilter: string;
   openedFilters: boolean;
 }
-
 export default function SortingSection({
   name,
   filters,

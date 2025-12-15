@@ -23,6 +23,10 @@ const style = {
   px: 2,
   pb: 2,
 };
+interface IModalUI {
+  open: boolean;
+  setOpen: (value?: boolean) => void;
+}
 
 export default function ModalUI({ setOpen, open }: ModalUI) {
   const navigate = useNavigate();
