@@ -1,5 +1,5 @@
 import "./viewProductDetails.css";
-import { AlertMui, Button } from "../../components";
+import { AlertMui, ButtonUI } from "../../components";
 import Rating from "@mui/material/Rating";
 import { ImagesView } from "../index";
 import { ViewDetail } from "../../interfaces/product";
@@ -41,7 +41,7 @@ export const ViewProductDetails = memo(({ product }: ViewDetail) => {
         </div>
         <div className="product-card-controll-panel">
           <div className="product-card-add-to-cart">
-            <Button
+            <ButtonUI
               borderRadius="20px"
               fontSize="18px"
               width="100%"
@@ -52,7 +52,7 @@ export const ViewProductDetails = memo(({ product }: ViewDetail) => {
               onClick={handleAddToBasket}
             />
           </div>
-          <Button
+          <ButtonUI
             borderRadius="20px"
             fontSize="18px"
             width="100%"

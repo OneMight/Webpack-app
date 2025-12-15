@@ -23,7 +23,7 @@
 }
 .burger-menu__link {
   font-size: 18px;
-  font-family: var(--Oxygen);
+  font-family: var(--oxygen);
   text-decoration: none;
   color: var(--total-black);
 }
@@ -31,7 +31,7 @@
   background: transparent;
   border: none;
   font-size: 18px;
-  font-family: var(--Oxygen);
+  font-family: var(--oxygen);
 }
 
 @media screen and (max-width: 550px) {

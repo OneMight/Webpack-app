@@ -1,5 +1,5 @@
 import { AlertMui } from "./alert/alert";
-import Button from "./button/button";
+import ButtonUI from "./button/buttonUI";
 import Card from "./card/card";
 import Input from "./inputs/baseInput/input";
 import SortingSection from "./sortingSection/sortingSection";
@@ -9,7 +9,7 @@ import ControllPanelCard from "./controllPanelCard/controllPanelCard";
 import Review from "./review/review";
 export {
   AlertMui,
-  Button,
+  ButtonUI,
   Card,
   Input,
   SortingSection,

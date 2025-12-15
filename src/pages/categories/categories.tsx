@@ -3,7 +3,7 @@ import "./categories.css";
 import {
   Card,
   SortingSection,
-  Button,
+  ButtonUI,
   Input,
   AlertMui,
 } from "../../components/index";
@@ -12,7 +12,10 @@ import {
   useGetProductsQuery,
 } from "../../api/productApi";
 import { Product } from "../../interfaces/product";
-
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 export default function CategoriesPage() {
   const {
     data: categories,
@@ -78,9 +81,9 @@ export default function CategoriesPage() {
   if (errorCategory || errorProduct) return <p>Error</p>;
 
   return (
-    <main className="main">
+    <Box component={"main"} className="main">
       {addError && <AlertMui setError={setErrorLog}>{addError}</AlertMui>}
-      <div className="filter-div">
+      <Box className="filter-div">
         <SortingSection
           name="Filters"
           filters={categories}
@@ -88,18 +91,24 @@ export default function CategoriesPage() {
           onChange={handleSetArrayFilters}
           selectedFilter={selectedFilter}
         />
-      </div>
-      <section className="main-div">
-        <div className="main-title">
-          <div className="main-filter-open">
-            <h2 className="main-text__title">Our Collection Of Products</h2>
-            <button
+      </Box>
+      <Stack component={"section"} direction={"column"} className="main-div">
+        <Stack component={"div"} direction={"column"} className="main-title">
+          <Box className="main-filter-open">
+            <Typography
+              component={"h2"}
+              variant="h5"
+              className="main-text__title"
+            >
+              Our Collection Of Products
+            </Typography>
+            <Button
               className="open-filters"
               onClick={() => setOpenFilters((prev) => !prev)}
             >
               {openFilters ? "Close" : "Open"} filters
-            </button>
-          </div>
+            </Button>
+          </Box>
 
           <Input
             name="search"
@@ -117,20 +126,20 @@ export default function CategoriesPage() {
               color: "#000",
             }}
           />
-          <p className="main-subtitle">
+          <Typography component={"p"} className="main-subtitle">
             Showing {limit} of {data.total}
-          </p>
-        </div>
-        <section className="main-data">
+          </Typography>
+        </Stack>
+        <Box component={"section"} className="main-data">
           {data.products?.length !== 0 ? (
             data.products.map((elem: Product) => (
               <Card thing={elem} setError={setErrorLog} key={elem.id} />
             ))
           ) : (
-            <p>No products found</p>
+            <Typography component={"p"}>No products found</Typography>
           )}
-        </section>
-        <Button
+        </Box>
+        <ButtonUI
           textColor="#fff"
           borderRadius="30px"
           width="200px"
@@ -140,8 +149,8 @@ export default function CategoriesPage() {
           onClick={handleLoadMore}
         >
           Load More
-        </Button>
-      </section>
-    </main>
+        </ButtonUI>
+      </Stack>
+    </Box>
   );
 }

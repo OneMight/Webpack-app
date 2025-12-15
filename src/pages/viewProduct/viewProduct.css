@@ -15,7 +15,6 @@
 .main-description-product {
   width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   background-color: var(--background-reviews);
   padding: 40px 0;

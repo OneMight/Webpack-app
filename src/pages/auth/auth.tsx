@@ -1,6 +1,6 @@
 import "./auth.css";
 import "../registration/registration.css";
-import Button from "../../components/button/button";
+import Button from "../../components/button/buttonUI";
 import FormInput from "../../components/inputs/formInput/formInput";
 import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
@@ -8,6 +8,10 @@ import { useState } from "react";
 import type { User } from "../../types/types";
 import { useGetTokenMutation } from "../../api/userApi";
 import { AlertMui } from "../../components";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import FormControl from "@mui/material/FormControl";
 export default function Auth() {
   const [loginFunc] = useGetTokenMutation();
   const [error, setError] = useState<string>(null);
@@ -37,21 +41,27 @@ export default function Auth() {
     setUser((prev) => ({ ...prev, username: e.target.value }));
   };
   return (
-    <main className="auth-page">
+    <Box component={"main"} className="auth-page">
       {error && <AlertMui setError={setError}>{error}</AlertMui>}
-      <div className="auth">
-        <section className="auth-con">
-          <div className="auth-text">
-            <h2 className="auth-title">Login</h2>
-            <p className="redirect">
+      <Stack direction={"row"} className="auth">
+        <Box component={"section"} className="auth-con">
+          <Box>
+            <Typography component={"h4"} variant="h4" className="auth-title">
+              Login
+            </Typography>
+            <Typography component={"p"} className="redirect">
               Do not have an account,
               <Link className="registration-login" to={ROUTES.REGISTER}>
                 create a new one
               </Link>
               .
-            </p>
-          </div>
-          <form className="auth-inputs" onSubmit={handlePreventDefault}>
+            </Typography>
+          </Box>
+          <FormControl
+            className="auth-inputs"
+            required
+            onSubmit={handlePreventDefault}
+          >
             <FormInput
               label="Enter Your Username"
               name="username"
@@ -78,17 +88,17 @@ export default function Auth() {
             >
               Login
             </Button>
-          </form>
-        </section>
-        <div className="img">
+          </FormControl>
+        </Box>
+        <Box className="img">
           <img
             className="image"
             loading="lazy"
             src="/images/registration-img.jpg"
             alt="auth-image"
           />
-        </div>
-      </div>
-    </main>
+        </Box>
+      </Stack>
+    </Box>
   );
 }

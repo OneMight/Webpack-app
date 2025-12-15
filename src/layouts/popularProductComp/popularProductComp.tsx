@@ -1,5 +1,5 @@
 import "./popularProductComp.css";
-import Button from "../../components/button/button";
+import Button from "../../components/button/buttonUI";
 import { useGetProductsQuery } from "../../api/productApi";
 import Card from "../../components/card/card";
 import { useNavigate } from "react-router-dom";

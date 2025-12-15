@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
 import "./header.css";
-import Button from "../../components/button/button";
+import Button from "../../components/button/buttonUI";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useVerifyUserQuery } from "../../api/userApi";

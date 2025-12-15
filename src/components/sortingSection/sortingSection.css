@@ -6,6 +6,7 @@
   flex-direction: column;
   border: 1px solid rgb(119, 119, 119);
   padding: 20px;
+  z-index: 1;
   background-color: var(--white);
 }
 .filters-title {

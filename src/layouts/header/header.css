@@ -26,7 +26,7 @@
   cursor: pointer;
 }
 .header_nav > a {
-  font-family: var(--Oxygen);
+  font-family: var(--oxygen);
   text-decoration: none;
   color: var(--total-black);
 }

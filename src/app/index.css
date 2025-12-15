@@ -4,8 +4,8 @@
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  --Oxygen: "Oxygen", sans-serif;
-  --Exo: Exo sans-serif;
+  --oxygen: "Oxygen", sans-serif;
+  --oxo: Exo sans-serif;
   font-size: 16px;
   color: black;
   min-height: 100vh;
@@ -23,5 +23,5 @@ body {
 }
 p,
 h2 {
-  font-family: var(--Oxygen);
+  font-family: var(--oxygen);
 }

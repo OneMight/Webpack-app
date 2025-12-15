@@ -3,6 +3,9 @@ import { ViewProductDetails } from "../../layouts";
 import { useParams } from "react-router-dom";
 import { useGetProductByIdQuery } from "../../api/productApi";
 import { Review } from "../../components/index";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 export default function ViewProduct() {
   const { id } = useParams();
   const { data: product, isLoading, error } = useGetProductByIdQuery(id);
@@ -13,22 +16,32 @@ export default function ViewProduct() {
     return <p>Error</p>;
   }
   return (
-    <main className="main-view-product">
-      <section className="main-images-product">
+    <Box component={"main"} className="main-view-product">
+      <Box component={"section"} className="main-images-product">
         <ViewProductDetails product={product} />
-      </section>
-      <section className="main-description-product">
-        <div className="review-section">
-          <h2 className="review-section__title">Reviews</h2>
+      </Box>
+      <Stack
+        component={"section"}
+        direction={"column"}
+        className="main-description-product"
+      >
+        <Box className="review-section">
+          <Typography
+            component={"h2"}
+            variant="h4"
+            className="review-section__title"
+          >
+            Reviews
+          </Typography>
           {product.reviews?.length == 0 ? (
             product.reviews.map((review) => (
               <Review review={review} key={review.id} />
             ))
           ) : (
-            <p>No reviews yet.</p>
+            <Typography>No reviews yet.</Typography>
           )}
-        </div>
-      </section>
-    </main>
+        </Box>
+      </Stack>
+    </Box>
   );
 }

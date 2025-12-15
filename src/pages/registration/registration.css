@@ -40,7 +40,7 @@
 }
 .redirect,
 .registration-login {
-  font-family: var(--Oxygen);
+  font-family: var(--oxygen);
 }
 .registration-form {
   display: flex;
@@ -50,7 +50,6 @@
 }
 .registration-inputs {
   display: flex;
-  flex-direction: row;
   gap: 30px;
   width: 100%;
 }
@@ -61,7 +60,7 @@
   flex-direction: column;
   align-items: start;
   gap: 10px;
-  font-family: var(--Oxygen);
+  font-family: var(--oxygen);
   width: 45%;
 }
 .registration-terms {
@@ -71,6 +70,11 @@
   justify-content: start;
   gap: 10px;
   cursor: pointer;
+  font-family: var(--oxygen);
+  color: var(--total-black);
+}
+.registration-policy {
+  width: 100%;
 }
 .img {
   width: 50%;
