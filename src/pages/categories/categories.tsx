@@ -55,14 +55,14 @@ export default function CategoriesPage() {
     setLimit((prev) => {
       if (data.total < prev) return data.total;
       else {
-        return prev < data.total && data.total > limit ? limit : data.total;
+        return data.total > prev ? 12 : data.total;
       }
     });
   }, [data?.total]);
 
   const handleLoadMore = () => {
     setLimit((prev) => {
-      const add = data.total - prev > limit ? limit : data.total - prev;
+      const add = data.total - prev > prev ? 12 : data.total - prev;
       return prev + add;
     });
   };
@@ -71,7 +71,7 @@ export default function CategoriesPage() {
     const item = value === selectedFilter ? "" : value;
     setSelectedFilter(item);
     setLimit((prev) => {
-      const add = data.total - prev > limit ? limit : data.total - prev;
+      const add = data.total - prev > prev ? 12 : data.total - prev;
       return prev + add;
     });
     setSearch("");
@@ -140,8 +140,8 @@ export default function CategoriesPage() {
           )}
         </Box>
         <ButtonUI
-          textColor="#fff"
-          borderRadius="30px"
+          tint="#fff"
+          radius="30px"
           width="200px"
           padding="10px"
           fontSize="20px"

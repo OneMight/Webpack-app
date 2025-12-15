@@ -45,7 +45,7 @@ export default function Auth() {
       {error && <AlertMui setError={setError}>{error}</AlertMui>}
       <Stack direction={"row"} className="auth">
         <Box component={"section"} className="auth-con">
-          <Box>
+          <Box className="registration-text">
             <Typography component={"h4"} variant="h4" className="auth-title">
               Login
             </Typography>
@@ -81,9 +81,9 @@ export default function Auth() {
             <Button
               width="100%"
               padding="10px 0"
-              borderRadius="30px"
+              radius="30px"
               fontSize="20px"
-              textColor="#fff"
+              tint="#fff"
               onClick={handleGetToken}
             >
               Login

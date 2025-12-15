@@ -3,6 +3,7 @@ import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
+import Typography from "@mui/material/Typography";
 
 interface ModalUI {
   open: boolean;
@@ -50,8 +51,12 @@ export default function ModalUI({ setOpen, open }: ModalUI) {
       aria-describedby="parent-modal-description"
     >
       <Box sx={{ ...style, width: 250 }}>
-        <h2 id="parent-modal-title">Exit</h2>
-        <p id="parent-modal-description">Are you sure you wont to exit? </p>
+        <Typography component={"h2"} variant="h6" id="parent-modal-title">
+          Exit
+        </Typography>
+        <Typography component={"p"} id="parent-modal-description">
+          Are you sure you wont to exit?{" "}
+        </Typography>
         <Button onClick={handleExit}>Yes</Button>
         <Button onClick={handleClose}>No</Button>
       </Box>

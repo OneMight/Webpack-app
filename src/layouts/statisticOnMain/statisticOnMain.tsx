@@ -1,48 +1,68 @@
+import Box from "@mui/material/Box";
 import Button from "../../components/button/buttonUI";
 import "./statisticOnMain.css";
+import Typography from "@mui/material/Typography";
 const StatisticOnMain = () => {
   return (
-    <div className="statistic-div">
-      <div className="statistic-container">
-        <div className="statistic-direct">
-          <h2 className="statistic-title">
+    <Box className="statistic-div">
+      <Box className="statistic-container">
+        <Box className="statistic-direct">
+          <Typography component={"h2"} variant="h4" className="statistic-title">
             Have a Look at Our Unique Selling Proportions
-          </h2>
+          </Typography>
           <Button
             children="Read more"
-            textColor="#000"
-            backgroundColor="#fff"
-            borderRadius="30px"
+            tint="#000"
+            background="#fff"
+            radius="30px"
             fontSize="20px"
             padding="5px 10px"
             width="150px"
           />
-        </div>
-        <div className="statistic-desc">
-          <p className="statistic-desc_title">
+        </Box>
+        <Box className="statistic-desc">
+          <Typography component={"p"} className="statistic-desc_title">
             Our solutions are designed for those who value quality and
             reliability. We offer products that help businesses grow faster,
             work more efficiently, and achieve better results. Each tool
             undergoes thorough testing to ensure its effectiveness and
             durability.
-          </p>
-          <section className="statistic-desc_section">
-            <article className="statistic-desc_article">
-              <h2 className="statistic-desc_article-title">99%</h2>
-              <p className="statistic-desc_article-description">
+          </Typography>
+          <Box component={"section"} className="statistic-desc_section">
+            <Box component={"article"} className="statistic-desc_article">
+              <Typography
+                component={"h2"}
+                variant="h3"
+                className="statistic-desc_article-title"
+              >
+                99%
+              </Typography>
+              <Typography
+                component={"p"}
+                className="statistic-desc_article-description"
+              >
                 Clients report increased efficiency
-              </p>
-            </article>
-            <article className="statistic-desc_article">
-              <h2 className="statistic-desc_article-title">100%</h2>
-              <p className="statistic-desc_article-description">
+              </Typography>
+            </Box>
+            <Box component={"article"} className="statistic-desc_article">
+              <Typography
+                component={"h2"}
+                variant="h3"
+                className="statistic-desc_article-title"
+              >
+                100%
+              </Typography>
+              <Typography
+                component={"p"}
+                className="statistic-desc_article-description"
+              >
                 Meeting standards and expectations
-              </p>
-            </article>
-          </section>
-        </div>
-      </div>
-    </div>
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 export default StatisticOnMain;

@@ -33,7 +33,7 @@ export default function ViewProduct() {
           >
             Reviews
           </Typography>
-          {product.reviews?.length == 0 ? (
+          {product.reviews?.length !== 0 ? (
             product.reviews.map((review) => (
               <Review review={review} key={review.id} />
             ))

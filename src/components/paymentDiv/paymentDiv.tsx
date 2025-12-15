@@ -1,13 +1,19 @@
+import Box from "@mui/material/Box";
 import "./paymentDiv.css";
+import Typography from "@mui/material/Typography";
 interface PaymentDiv {
   title: string;
   sum: number | string;
 }
 export default function PaymentDiv({ title, sum }: PaymentDiv) {
   return (
-    <div className="payment-div">
-      <p className="payment-title">{title}</p>
-      <p className="payment-sum">{typeof sum === "string" ? sum : `$${sum}`}</p>
-    </div>
+    <Box className="payment-div">
+      <Typography component={"p"} className="payment-title">
+        {title}
+      </Typography>
+      <Typography component={"p"} className="payment-sum">
+        {typeof sum === "string" ? sum : `$${sum}`}
+      </Typography>
+    </Box>
   );
 }

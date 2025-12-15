@@ -1,17 +1,25 @@
 import React from "react";
 import "./footer.css";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import FormControl from "@mui/material/FormControl";
 export default function Footer() {
-  const handlePrevent = (e: React.FormEvent<HTMLFormElement>) => {
+  const handlePreventDefult = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
   return (
-    <footer className="footer">
-      <div className="footer-describe">
+    <Box component={"footer"} className="footer">
+      <Stack direction={"column"} className="footer-describe">
         <img src="/images/logo-70-white.svg" alt="logo-white" />
-        <h2 className="footer-title">
+        <Typography component={"h2"} variant="h4" className="footer-title">
           Subscribe To Your Newsletter to Stay Updated About Discounts
-        </h2>
-        <form onSubmit={(e) => handlePrevent(e)} className="footer-form">
+        </Typography>
+        <FormControl
+          component={"form"}
+          onSubmit={handlePreventDefult}
+          className="footer-form"
+        >
           <input
             type="text"
             name="email-subscription"
@@ -25,13 +33,13 @@ export default function Footer() {
               alt="arrow-right"
             />
           </button>
-        </form>
-      </div>
-      <div className="sub-footer">
-        <p className="sub-footer_copyright">
+        </FormControl>
+      </Stack>
+      <Box className="sub-footer">
+        <Typography component={"p"} className="sub-footer_copyright">
           Copyright © 2023 Renew Bariatrics, Inc
-        </p>
-      </div>
-    </footer>
+        </Typography>
+      </Box>
+    </Box>
   );
 }

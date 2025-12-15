@@ -7,6 +7,9 @@ import { ROUTES } from "../../utils/routes";
 import { Product } from "../../interfaces/product";
 import { useState } from "react";
 import { AlertMui } from "../../components";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import Box from "@mui/material/Box";
 const PopularProductComp = () => {
   const { data, error, isLoading } = useGetProductsQuery({ limit: 8, skip: 0 });
   const [addError, setError] = useState<string>(null);
@@ -16,32 +19,40 @@ const PopularProductComp = () => {
   };
 
   if (isLoading || error) {
-    return <p>Loading....</p>;
+    return <Typography component={"p"}>Loading....</Typography>;
   }
   return (
-    <section className="main-page_section">
+    <Stack
+      direction={"column"}
+      component={"section"}
+      className="main-page_section"
+    >
       {addError && <AlertMui setError={setError}>{addError}</AlertMui>}
-      <div className="main-page_direction">
-        <div className="main-page_title-text">
-          <h1 className="main-page_title">Most Popular Products</h1>
-          <p className="main-page_text">Most popular products</p>
-        </div>
+      <Box className="main-page_direction">
+        <Stack direction={"column"} className="main-page_title-text">
+          <Typography component={"h1"} variant="h4" className="main-page_title">
+            Most Popular Products
+          </Typography>
+          <Typography component={"p"} className="main-page_text">
+            Most popular products
+          </Typography>
+        </Stack>
         <Button
           padding="5px 5px"
-          textColor="#fff"
-          borderRadius="20px"
+          tint="#fff"
+          radius="20px"
           fontSize="16px"
           width="120px"
           onClick={handleDirectToShop}
           children="View All"
         />
-      </div>
-      <div className="main-page_card-container">
+      </Box>
+      <Box className="main-page_card-container">
         {data.products.map((product: Product) => {
           return <Card key={product.id} setError={setError} thing={product} />;
         })}
-      </div>
-    </section>
+      </Box>
+    </Stack>
   );
 };
 export default PopularProductComp;

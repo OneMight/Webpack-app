@@ -1,4 +1,7 @@
+import Box from "@mui/material/Box";
 import "./ControllPanelCard.css";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 interface ControllPanel {
   count: number;
@@ -11,14 +14,24 @@ export default function ControllPanelCard({
   plus,
 }: ControllPanel) {
   return (
-    <div className="product-controll">
-      <button className="product-control__button" onClick={minus}>
+    <Box className="product-controll">
+      <Button
+        sx={{ minWidth: "25px", color: "var(--total-black)" }}
+        className="product-control__button"
+        onClick={minus}
+      >
         -
-      </button>
-      <p className="procut-text">{count}</p>
-      <button className="product-control__button" onClick={plus}>
+      </Button>
+      <Typography component={"p"} className="procut-text">
+        {count}
+      </Typography>
+      <Button
+        sx={{ minWidth: "25px", color: "var(--total-black)" }}
+        className="product-control__button"
+        onClick={plus}
+      >
         +
-      </button>
-    </div>
+      </Button>
+    </Box>
   );
 }

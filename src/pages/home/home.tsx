@@ -13,7 +13,7 @@ export default function HomePage() {
         className="home-page_entire-block"
       >
         <Box component={"section"} className="home-page_article">
-          <Typography component={"h2"} variant="h5" className="home-page_title">
+          <Typography component={"h2"} variant="h3" className="home-page_title">
             Crafting Comfort, Redefining Spaces. Your Home, Your Signature
             Style!
           </Typography>

@@ -13,6 +13,7 @@
   font-size: 22px;
   margin: 0;
   text-decoration: none;
+  font-family: var(--oxygen);
   color: var(--total-black);
   transition: all 0.3s;
 }
@@ -35,6 +36,7 @@
   width: 25px;
   height: 25px;
   background-color: transparent;
+  color: var(--total-black);
 }
 
 @media (any-hover: hover) {

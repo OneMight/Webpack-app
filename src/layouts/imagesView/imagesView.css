@@ -60,9 +60,7 @@
   .small-image {
     max-width: 70px;
   }
-  .product-card-price {
-    flex-direction: column;
-  }
+
   .review-user {
     width: 90%;
   }

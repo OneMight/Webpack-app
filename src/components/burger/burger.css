@@ -38,9 +38,7 @@
   .burger-menu {
     display: flex;
   }
-  .header-log-buttons {
-    display: none;
-  }
+
   .header_controll {
     display: none;
   }

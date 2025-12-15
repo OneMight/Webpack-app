@@ -8,6 +8,9 @@ import {
   addTotalSum,
   minusTotalSum,
 } from "../../store/userProductSlice";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 export default function ProductBasket({ thing }: ProductCard) {
   const [count, setCount] = useState<number>(1);
   const [productPrice, setProductPrice] = useState<number>(thing.price);
@@ -30,32 +33,33 @@ export default function ProductBasket({ thing }: ProductCard) {
     dispatch(minusTotalSum(productPrice));
   };
   return (
-    <section className="product">
-      <div className="product-left">
-        <button
+    <Box component={"section"} className="product">
+      <Box className="product-left">
+        <Button
+          sx={{ minWidth: "30px", color: "var(--total-black)" }}
           className="product-control__button"
           onClick={() => handleDeleteFromBasket(thing.id)}
         >
           X
-        </button>
-        <div className="product-desc">
+        </Button>
+        <Box className="product-desc">
           <img
             className="product-img"
             src={thing.images?.[0]}
             alt={thing.title}
           />
-          <p className="product-text">{thing.title}</p>
-        </div>
-      </div>
-      <div className="product-right">
-        <p className="product-price">${thing.price}</p>
+          <Typography className="product-text">{thing.title}</Typography>
+        </Box>
+      </Box>
+      <Box className="product-right">
+        <Typography className="product-price">${thing.price}</Typography>
         <ControllPanelCard
           count={count}
           minus={handleMinusCount}
           plus={handlePlusCount}
         />
-        <p className="product-total-text">${productPrice}</p>
-      </div>
-    </section>
+        <Typography className="product-total-text">${productPrice}</Typography>
+      </Box>
+    </Box>
   );
 }

@@ -26,6 +26,9 @@
 }
 .registration-text {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .registration-title {
@@ -72,6 +75,7 @@
   cursor: pointer;
   font-family: var(--oxygen);
   color: var(--total-black);
+  font-size: 12px;
 }
 .registration-policy {
   width: 100%;

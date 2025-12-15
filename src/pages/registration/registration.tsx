@@ -11,8 +11,8 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
 import Input from "@mui/material/Input";
+import FormLabel from "@mui/material/FormLabel";
 export default function Registration() {
   const handlePreventDefault = (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
@@ -112,25 +112,25 @@ export default function Registration() {
                 onChange={handleSetConfirmPassword}
               />
             </Stack>
-            <Box sx={{ position: "relative" }} className="registration-policy">
-              <InputLabel className="registration-terms">
-                <Input
-                  type="checkbox"
-                  required
-                  aria-checked={checkPolicy}
-                  onChange={handleSetCheckPolicy}
-                />
-                I have read and agreed to the Terms of Service and Privacy
-                Policy
-              </InputLabel>
-            </Box>
+            <FormLabel
+              sx={{ color: "--var(--total-black)" }}
+              className="registration-terms"
+            >
+              <Input
+                type="checkbox"
+                required
+                aria-checked={checkPolicy}
+                onChange={handleSetCheckPolicy}
+              />
+              I have read and agreed to the Terms of Service and Privacy Policy
+            </FormLabel>
 
             <Button
               width="100%"
               padding="10px 0"
-              borderRadius="30px"
+              radius="30px"
               fontSize="20px"
-              textColor="#fff"
+              tint="#fff"
               disabled={!checkPolicy}
               onClick={handleRegister}
             >
