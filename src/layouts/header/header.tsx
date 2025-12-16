@@ -10,9 +10,12 @@ import { PositionedMenu } from "../index";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import { setIsAuth } from "../../store/userAuthSlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 const Header = () => {
   const navigate = useNavigate();
-  const [isLogged, setIsLogged] = useState<boolean>(false);
+  const dispatch = useAppDispatch();
+  const { isAuth } = useAppSelector((state) => state.userAuth);
   const [open, setOpen] = useState<boolean>(false);
   const [openedBurger, setOpenedBurger] = useState<boolean>(false);
   const handleNavigate = (route: string) => {
@@ -32,7 +35,7 @@ const Header = () => {
   });
   useEffect(() => {
     if (isSuccess) {
-      setIsLogged(true);
+      dispatch(setIsAuth(true));
     }
   }, [isSuccess]);
   return (
@@ -50,11 +53,11 @@ const Header = () => {
           opened={openedBurger}
           setOpenModal={handleOpenModal}
           setOpened={setOpenedBurger}
-          isLogged={isLogged}
+          isLogged={isAuth}
         />
       </Box>
 
-      {!isLogged ? (
+      {!isAuth ? (
         <Box className="header-log-buttons">
           <ButtonUI
             children="Registration"
