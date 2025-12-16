@@ -1,28 +1,42 @@
 import "./viewProductDetails.css";
-import { AlertMui, ButtonUI } from "../../components";
+import { AlertMui, ButtonUI, ControllPanelCard } from "../../components";
 import Rating from "@mui/material/Rating";
 import { ImagesView } from "../index";
 import { ViewDetail } from "../../interfaces/product";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { setProducts, clearError } from "../../store/userProductSlice";
-import { memo } from "react";
+import { setProducts, setError } from "../../store/userProductSlice";
+import { memo, useState } from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
+import { AlertProps } from "../../types/types";
 export const ViewProductDetails = memo(({ product }: ViewDetail) => {
-  const error = useAppSelector((state) => state.userProduct.error);
+  const [count, setCount] = useState<number>(1);
+  const [addAlert, setAlert] = useState<AlertProps>({
+    message: "",
+    type: "success",
+  });
+  const { isAuth } = useAppSelector((state) => state.userAuth);
   const dispatch = useAppDispatch();
   const handleAddToBasket = () => {
-    dispatch(setProducts(product));
-  };
-  const handleClearError = () => {
-    dispatch(clearError());
+    if (isAuth) {
+      dispatch(setProducts({ ...product, quantity: count }));
+      setAlert({
+        message: "Product added to basket successfully",
+        type: "success",
+      });
+    } else {
+      setAlert({
+        message: "You need to login to add products to basket",
+        type: "error",
+      });
+    }
   };
   return (
     <Box component={"section"} className="product-card">
-      {error && <AlertMui setError={handleClearError}>{error}</AlertMui>}
+      {addAlert.message && <AlertMui setAlert={setAlert}>{addAlert}</AlertMui>}
       <ImagesView thing={product} />
       <Stack
         component={"section"}
@@ -57,16 +71,28 @@ export const ViewProductDetails = memo(({ product }: ViewDetail) => {
           </Box>
         </Stack>
         <Stack direction={"column"} className="product-card-controll-panel">
-          <ButtonUI
-            radius="20px"
-            fontSize="18px"
-            width="100%"
-            background="#000"
-            padding="5px 0"
-            tint="#fff"
-            children="Add to Cart"
-            onClick={handleAddToBasket}
-          />
+          <Stack
+            direction={"row"}
+            spacing={2}
+            className="product-card-add-to-cart"
+          >
+            <ControllPanelCard
+              count={count}
+              minus={() => setCount((prev) => prev - 1)}
+              plus={() => setCount((prev) => prev + 1)}
+            />
+            <ButtonUI
+              radius="20px"
+              fontSize="18px"
+              width="100%"
+              background="#000"
+              padding="5px 0"
+              tint="#fff"
+              children="Add to Cart"
+              onClick={handleAddToBasket}
+            />
+          </Stack>
+
           <ButtonUI
             radius="20px"
             fontSize="18px"

@@ -3,5 +3,11 @@
   "singleQuote": false,
   "tabWidth": 2,
   "trailingComma": "all",
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "no-restricted-imports": [
+    "error",
+    {
+      "patterns": [{ "regex": "^@mui/[^/]+$" }]
+    }
+  ]
 }

@@ -5,7 +5,7 @@ import FormInput from "../../components/inputs/formInput/formInput";
 import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
 import { useState } from "react";
-import type { User } from "../../types/types";
+import type { AlertProps, User } from "../../types/types";
 import { useGetTokenMutation } from "../../api/userApi";
 import { AlertMui } from "../../components";
 import Box from "@mui/material/Box";
@@ -14,7 +14,10 @@ import Typography from "@mui/material/Typography";
 import FormControl from "@mui/material/FormControl";
 export default function Auth() {
   const [loginFunc] = useGetTokenMutation();
-  const [error, setError] = useState<string>(null);
+  const [addAlert, setAlert] = useState<AlertProps>({
+    message: "",
+    type: "success",
+  });
   const [user, setUser] = useState<User>({
     username: "",
     password: "",
@@ -27,7 +30,7 @@ export default function Auth() {
       document.cookie = `refreshToken=${response.refreshToken}`;
       navigate(ROUTES.HOME);
     } catch (error) {
-      setError(error.data.message);
+      setAlert({ message: error.data.message, type: "error" });
       return;
     }
   };
@@ -42,7 +45,7 @@ export default function Auth() {
   };
   return (
     <Box component={"main"} className="auth-page">
-      {error && <AlertMui setError={setError}>{error}</AlertMui>}
+      {addAlert.message && <AlertMui setAlert={setAlert}>{addAlert}</AlertMui>}
       <Stack direction={"row"} className="auth">
         <Box component={"section"} className="auth-con">
           <Box className="registration-text">

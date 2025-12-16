@@ -7,12 +7,17 @@ import { ROUTES } from "../../utils/routes";
 import { Product } from "../../interfaces/product";
 import { useState } from "react";
 import { AlertMui } from "../../components";
+import type { AlertProps } from "../../types/types";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
+
 const PopularProductComp = () => {
   const { data, error, isLoading } = useGetProductsQuery({ limit: 8, skip: 0 });
-  const [addError, setError] = useState<string>(null);
+  const [addAlert, setAlert] = useState<AlertProps>({
+    message: "",
+    type: "success",
+  });
   const navigate = useNavigate();
   const handleDirectToShop = () => {
     navigate(ROUTES.CATEGORIES);
@@ -27,7 +32,8 @@ const PopularProductComp = () => {
       component={"section"}
       className="main-page_section"
     >
-      {addError && <AlertMui setError={setError}>{addError}</AlertMui>}
+      {addAlert.message && <AlertMui setAlert={setAlert}>{addAlert}</AlertMui>}
+
       <Box className="main-page_direction">
         <Stack direction={"column"} className="main-page_title-text">
           <Typography component={"h1"} variant="h4" className="main-page_title">
@@ -49,7 +55,7 @@ const PopularProductComp = () => {
       </Box>
       <Box className="main-page_card-container">
         {data.products.map((product: Product) => {
-          return <Card key={product.id} setError={setError} thing={product} />;
+          return <Card key={product.id} setAlert={setAlert} thing={product} />;
         })}
       </Box>
     </Stack>

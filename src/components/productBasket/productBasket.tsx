@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./productBasket.css";
-import { useAppDispatch } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { ProductCard } from "../../interfaces/product";
 import { ControllPanelCard } from "../index";
 import {
@@ -11,26 +11,22 @@ import {
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-export default function ProductBasket({ thing }: ProductCard) {
-  const [count, setCount] = useState<number>(1);
-  const [productPrice, setProductPrice] = useState<number>(thing.price);
+export default function ProductBasket({ thing, quantity }: ProductCard) {
+  const [count, setCount] = useState<number>(quantity);
   const dispatch = useAppDispatch();
 
   const handlePlusCount = () => {
     setCount((prev) => prev + 1);
-    setProductPrice((prev) => Math.round((prev + thing.price) * 100) / 100);
-    dispatch(addTotalSum(thing.price));
+    dispatch(addTotalSum(thing));
   };
   const handleMinusCount = () => {
     if (count != 1) {
       setCount((prev) => prev - 1);
-      setProductPrice((prev) => Math.round((prev - thing.price) * 100) / 100);
-      dispatch(minusTotalSum(thing.price));
+      dispatch(minusTotalSum(thing));
     }
   };
-  const handleDeleteFromBasket = (id: number) => {
-    dispatch(deleteProduct(id));
-    dispatch(minusTotalSum(productPrice));
+  const handleDeleteFromBasket = () => {
+    dispatch(deleteProduct(thing));
   };
   return (
     <Box component={"section"} className="product">
@@ -38,14 +34,14 @@ export default function ProductBasket({ thing }: ProductCard) {
         <Button
           sx={{ minWidth: "30px", color: "var(--total-black)" }}
           className="product-control__button"
-          onClick={() => handleDeleteFromBasket(thing.id)}
+          onClick={handleDeleteFromBasket}
         >
           X
         </Button>
         <Box className="product-desc">
           <img
             className="product-img"
-            src={thing.images?.[0]}
+            src={thing.thumbnail}
             alt={thing.title}
           />
           <Typography className="product-text">{thing.title}</Typography>
@@ -58,7 +54,9 @@ export default function ProductBasket({ thing }: ProductCard) {
           minus={handleMinusCount}
           plus={handlePlusCount}
         />
-        <Typography className="product-total-text">${productPrice}</Typography>
+        <Typography className="product-total-text">
+          ${count * thing.price}
+        </Typography>
       </Box>
     </Box>
   );

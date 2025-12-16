@@ -22,3 +22,7 @@ export type BaseUser = {
   email: string;
   password: string;
 };
+export type AlertProps = {
+  message: string;
+  type: "error" | "success";
+};

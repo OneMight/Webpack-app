@@ -1,22 +1,27 @@
 import { ProductCard } from "../../interfaces/product";
 import "./card.css";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { setProducts, addTotalSum } from "../../store/userProductSlice";
+import { setProducts } from "../../store/userProductSlice";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-const Card = ({ thing, setError }: ProductCard) => {
+const Card = ({ thing, setAlert }: ProductCard) => {
   const dispatch = useAppDispatch();
-  const product = useAppSelector((state) => state.userProduct.product);
+  const { isAuth } = useAppSelector((state) => state.userAuth);
   const handleSetProduct = () => {
-    if (product.every((elem) => elem.title !== thing.title)) {
-      dispatch(setProducts(thing));
-      dispatch(addTotalSum(thing.price));
+    if (isAuth) {
+      dispatch(setProducts({ ...thing, quantity: 1 }));
+      setAlert({
+        message: "Product added to basket successfully",
+        type: "success",
+      });
     } else {
-      setError("You already add this product to cart");
-      return;
+      setAlert({
+        message: "You need to login to add products to basket",
+        type: "error",
+      });
     }
   };
   return (

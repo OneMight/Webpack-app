@@ -16,18 +16,22 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { AlertProps } from "../../types/types";
 export default function CategoriesPage() {
   const {
     data: categories,
     isLoading: isLoadingCategoris,
     error: errorCategory,
   } = useGetCategoriesQuery("");
-  const [addError, setErrorLog] = useState<string>(null);
   const [limit, setLimit] = useState<number>(12);
   const [selectedFilter, setSelectedFilter] = useState<string>("");
   const [search, setSearch] = useState<string>("");
   const [debouncedSearch, setDebouncedSearch] = useState<string>("");
   const [openFilters, setOpenFilters] = useState<boolean>(false);
+  const [addAlert, setAlert] = useState<AlertProps>({
+    message: "",
+    type: "success",
+  });
   const {
     data,
     isLoading: isLoadingProducts,
@@ -82,7 +86,7 @@ export default function CategoriesPage() {
 
   return (
     <Box component={"main"} className="main">
-      {addError && <AlertMui setError={setErrorLog}>{addError}</AlertMui>}
+      {addAlert.message && <AlertMui setAlert={setAlert}>{addAlert}</AlertMui>}
       <Box className="filter-div">
         <SortingSection
           name="Filters"
@@ -133,7 +137,7 @@ export default function CategoriesPage() {
         <Box component={"section"} className="main-data">
           {data.products?.length !== 0 ? (
             data.products.map((elem: Product) => (
-              <Card thing={elem} setError={setErrorLog} key={elem.id} />
+              <Card thing={elem} setAlert={setAlert} key={elem.id} />
             ))
           ) : (
             <Typography component={"p"}>No products found</Typography>

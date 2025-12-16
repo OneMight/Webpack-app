@@ -17,34 +17,50 @@ const userProductSlice = createSlice({
   initialState,
   reducers: {
     setProducts(state, actions) {
-      const exists = state.product.some((p) => p.id === actions.payload.id);
+      const existProduct = state.product.find(
+        (p) => p.id === actions.payload.id,
+      );
       state.error = null;
-      if (!exists) {
-        state.product.push(actions.payload);
-        state.subtotal =
-          Math.round((state.subtotal + actions.payload.price) * 100) / 100;
+      if (!existProduct && actions.payload.quantity) {
+        state.product.push({
+          ...actions.payload,
+          quantity: actions.payload.quantity,
+        });
       } else {
-        state.error = "This item is already in the cart";
+        existProduct.quantity += 1;
       }
-    },
-    clearError(state) {
-      state.error = null;
+      state.subtotal =
+        Math.round(
+          (state.subtotal + actions.payload.price * actions.payload?.quantity) *
+            100,
+        ) / 100;
     },
     deleteProduct(state, actions) {
+      state.subtotal =
+        Math.round(
+          (state.subtotal - actions.payload.price * actions.payload.quantity) *
+            100,
+        ) / 100;
       state.product = state.product.filter(
-        (elem: Product) => elem.id !== actions.payload,
+        (elem: Product) => elem.id !== actions.payload.id,
       );
     },
     addTotalSum(state, actions) {
-      const exists = state.product.some((p) => p.price === actions.payload);
-      if (!exists) {
-        state.subtotal =
-          Math.round((state.subtotal + actions.payload) * 100) / 100;
-      }
+      state.subtotal =
+        Math.round((state.subtotal + actions.payload.price) * 100) / 100;
+      const product = state.product.find((p) => p.id === actions.payload.id);
+      product.quantity += 1;
     },
     minusTotalSum(state, actions) {
       state.subtotal =
-        Math.round((state.subtotal - actions.payload) * 100) / 100;
+        Math.round((state.subtotal - actions.payload.price) * 100) / 100;
+      const product = state.product.find((p) => p.id === actions.payload.id);
+      if (product) {
+        product.quantity -= 1;
+      }
+    },
+    setError(state, actions) {
+      state.error = actions.payload;
     },
   },
 });
@@ -54,6 +70,6 @@ export const {
   deleteProduct,
   addTotalSum,
   minusTotalSum,
-  clearError,
+  setError,
 } = userProductSlice.actions;
 export default userProductSlice.reducer;

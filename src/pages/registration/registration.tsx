@@ -4,7 +4,7 @@ import { ROUTES } from "../../utils/routes";
 import { Link } from "react-router-dom";
 import FormInput from "../../components/inputs/formInput/formInput";
 import Button from "../../components/button/buttonUI";
-import type { BaseUser } from "../../types/types";
+import type { AlertProps, BaseUser } from "../../types/types";
 import { usePostUserMutation } from "../../api/userApi";
 import { AlertMui } from "../../components/alert/alert";
 import Box from "@mui/material/Box";
@@ -17,7 +17,10 @@ export default function Registration() {
   const handlePreventDefault = (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
   };
-  const [error, setError] = useState<string | null>(null);
+  const [addAlert, setAlert] = useState<AlertProps>({
+    message: "",
+    type: "success",
+  });
   const [newUser, setNewUser] = useState<BaseUser>({
     name: "",
     email: "",
@@ -28,11 +31,11 @@ export default function Registration() {
   const [adduser] = usePostUserMutation();
   const handleRegister = () => {
     if (newUser.password !== cPassword) {
-      setError("Passwords mismatch");
+      setAlert({ message: "Passwords mismatch", type: "error" });
       return;
     }
     if (newUser.name.length < 6) {
-      setError("Username is small");
+      setAlert({ message: "Username is small", type: "error" });
       return;
     }
     adduser(newUser);
@@ -54,7 +57,7 @@ export default function Registration() {
   };
   return (
     <Box component={"main"} className="registration-page">
-      {error && <AlertMui setError={setError}>{error}</AlertMui>}
+      {addAlert.message && <AlertMui setAlert={setAlert}>{addAlert}</AlertMui>}
       <Box className="registration">
         <Stack direction={"column"} className="registration-con">
           <Box className="registration-text">

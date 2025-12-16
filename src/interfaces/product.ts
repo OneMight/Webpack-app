@@ -1,12 +1,17 @@
+import { AlertProps } from "../types/types";
+
 export interface Product {
   id?: number;
   title: string;
   price: number;
   images: Array<string> | null;
+  thumbnail: string;
+  quantity?: number;
 }
 export interface ProductCard {
   thing: Product;
-  setError?: (error: string | null) => void;
+  setAlert?: (addAlert: AlertProps) => void;
+  quantity?: number;
 }
 
 export interface ProductResponse {

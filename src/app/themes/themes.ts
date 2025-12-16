@@ -7,9 +7,6 @@ export const fontTheme = createTheme({
           fontSize: "1em",
           fontFamily: "var(--oxygen)",
           color: "var(--total-black)",
-          ":hover": {
-            backgroundColor: "transparent",
-          },
         },
       },
     },

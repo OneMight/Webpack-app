@@ -1,14 +1,12 @@
 import "./shopList.css";
-import { PaymentDiv } from "../../components";
 import { useAppSelector } from "../../app/hooks";
-import { ProductBasket } from "../../components";
+import { ProductBasket, PaymentDiv } from "../../components";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 export default function ShopList() {
   const product = useAppSelector((state) => state.userProduct.product);
   const totalSum = useAppSelector((state) => state.userProduct.subtotal);
-
   return (
     <Box component={"main"} className="main-shop-list">
       {product?.length != 0 ? (
@@ -53,7 +51,13 @@ export default function ShopList() {
               className="main-product__things"
             >
               {product.map((elem) => {
-                return <ProductBasket thing={elem} key={elem.id} />;
+                return (
+                  <ProductBasket
+                    thing={elem}
+                    key={elem.id}
+                    quantity={elem.quantity}
+                  />
+                );
               })}
             </Stack>
           </Stack>
