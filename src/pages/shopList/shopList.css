@@ -23,7 +23,7 @@
 }
 .main-product__title {
   display: flex;
-  width: 95%;
+  width: 88%;
   align-items: center;
   justify-content: space-between;
   border-radius: 20px 20px 0 0;
@@ -68,7 +68,7 @@
 }
 .main-product__things {
   display: flex;
-  width: 95%;
+  width: 88%;
   align-items: center;
   justify-content: space-between;
   padding: 20px 17px;
@@ -97,7 +97,10 @@
   }
 }
 @media screen and (max-width: 500px) {
-  .main-shop-list {
-    justify-content: start;
+  .main-total-sum {
+    min-width: 300px;
+  }
+  .main-product-list {
+    min-width: 300px;
   }
 }
